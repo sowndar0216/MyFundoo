@@ -9,24 +9,26 @@ import { Location } from '@angular/common';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  panelOpenState = false;
+  viewChange=false;
   /** Based on the screen size, switch from standard to one column per row */
   constructor(private router: Router) { }
   logout():void{
 
     this.router.navigate(["login"])
   }
-  note():void{
-    this.router.navigate(["addNote"])
-  }
-  remainder():void{
-    this.router.navigate(["remainder"])
-  }
-  archive():void{
-    this.router.navigate(["archive"])
-  }
-  trash():void{
-    this.router.navigate(["trash"])
-  }
+  // note():void{
+  //   this.router.navigate(["addNote"])
+  // }
+  // remainder():void{
+  //   this.router.navigate(["remainder"])
+  // }
+  // archive():void{
+  //   this.router.navigate(["archive"])
+  // }
+  // trash():void{
+  //   this.router.navigate(["trash"])
+  // }
   
   
 

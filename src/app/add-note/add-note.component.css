@@ -6,4 +6,16 @@
     width: 500px;
     height: 300px;
   }
+  .noteInputBar {
+
+    /* display: flex;
+    padding: 1%; 
+    
+    border: 2px ;
+    width: 40%; */
+    width:600px;
+    
+    margin:0 auto;
+    margin-top: 40px;
+  }
   

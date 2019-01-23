@@ -23,30 +23,43 @@ const appRoutes: Routes =[
   path:'login',
   component:LoginComponent
 },
+
+
+ 
+  
 {
-  path:'',
-  component:DashboardComponent
-},
+  path:'dashboard',
+  component:DashboardComponent,
+  children:[
 {
   path:'addNote',
   component:AddNoteComponent
-},{
+},
+{
   path:'remainder',
   component:RemainderComponent
 },
 {
-  path:'dashboard',
-  component:DashboardComponent
-},
-{
-path:'archive',
-component:ArchiveComponent
-},
-{
-path:'trash',
-component:TrashComponent
+  path:'archive',
+  component:ArchiveComponent
+  },
+  {
+  path:'trash',
+  component:TrashComponent
+  
+  }
 
-}
+
+  ]
+
+
+},
+{
+  path:'trash',
+  component:TrashComponent
+  
+  }
+
 ];
  
 @NgModule({
