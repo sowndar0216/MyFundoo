@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import {
 MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
 MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule,MatSidenavModule,
-MatListModule,MatExpansionModule
+MatListModule,MatExpansionModule,MatSnackBarModule
 } from '@angular/material';
 @NgModule({
 imports: [
@@ -21,9 +21,11 @@ MatMenuModule,
 MatIconModule,
 MatProgressSpinnerModule,
 MatListModule,
-MatSidenavModule
+MatSidenavModule,
+MatSnackBarModule
 ],
 exports: [
+  MatSnackBarModule,
   MatExpansionModule,
 CommonModule,
 MatToolbarModule, 

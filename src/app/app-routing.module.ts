@@ -10,6 +10,7 @@ import {AddNoteComponent} from './add-note/add-note.component';
 import {RemainderComponent} from './remainder/remainder.component';
 import {ArchiveComponent} from './archive/archive.component';
 import { TrashComponent } from './trash/trash.component';
+import { OtpComponent } from './otp/otp.component';
 const appRoutes: Routes =[
  {
   path:'register',
@@ -53,6 +54,9 @@ const appRoutes: Routes =[
   ]
 
 
+},{
+path:'otp',
+component:OtpComponent
 },
 {
   path:'trash',

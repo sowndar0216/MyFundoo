@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ForgotPasswordComponent } from './forgotPassword/forgot-password.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 import{MaterialModule} from '../material.module';
@@ -17,6 +17,9 @@ import { AddNoteComponent } from './add-note/add-note.component';
 import { RemainderComponent } from './remainder/remainder.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { TrashComponent } from './trash/trash.component';
+import { OtpComponent } from './otp/otp.component';
+import { UserServiceService } from './user-service.service';
+import{HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,14 @@ import { TrashComponent } from './trash/trash.component';
     RemainderComponent,
     ArchiveComponent,
     TrashComponent,
+    OtpComponent,
     
 
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule ,
     MaterialModule,
     BrowserAnimationsModule,
@@ -46,7 +52,7 @@ import { TrashComponent } from './trash/trash.component';
    MatButtonModule,
    LayoutModule
   ],
-  providers: [],
+  providers: [UserServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
