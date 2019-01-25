@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddNoteComponent implements OnInit {
 
-  panelOpenState = false;
-  constructor() { }
+  barshow:boolean=false;
 
+  constructor() { }
+  fullCardShow()
+  {
+    this.barshow=!this.barshow;
+  }
   ngOnInit() {
   }
 

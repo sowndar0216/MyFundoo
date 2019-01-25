@@ -1,206 +1,105 @@
-<!-- <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div> -->
-<!-- <mat-toolbar>  
-    <mat-toolbar-row>
-      <span>First Row</span>
-    </mat-toolbar-row>
-  
-    <mat-toolbar-row>
-      <span>Second Row</span>
-    </mat-toolbar-row>
-  </mat-toolbar> -->
-  <!-- <mat-card-content>
-    <h1>ss</h1>
-    </mat-card-content> -->
-    
-    <!-- <mat-card class="example-card">
-        <mat-card-content>
-          <div class="dashboard-card-menu-icon"></div>
-          <div class="dashboard-card-menu-icon"></div>
-          <div class="dashboard-card-menu-icon"></div>
-          <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
-        </mat-card-content>
-      </mat-card> -->
-       
-        <!-- Creates a layout with a left-positioned sidenav and explicit content. -->
-        <!-- <div class="sideBar">
-          <mat-sidenav-container [hasBackdrop]="false">
-            <mat-sidenav #sidenav [mode]=push class="sideNav">
-              <mat-nav-list>
-                <mat-list-item class="navListItems">
-                  <button mat-button (click)="onClick">
-                    <mat-icon class="mat-18">add</mat-icon>
-                    Notes
-                  </button>
-                </mat-list-item>
-                <mat-list-item class="navListItems">
-                  <button mat-button (click)="onClick">
-                    <mat-icon class="mat-18">notifications_outline</mat-icon>
-                    Reminders
-                  </button>
-                </mat-list-item>
-                <mat-list-item class="navListItems">
-                  <button mat-button (click)="onClick">
-                    <mat-icon class="mat-18">label_outline</mat-icon>
-                    Add Label
-                  </button>
-                </mat-list-item>
-                <mat-list-item class="navListItems">
-                  <button mat-button (click)="onClick">
-                    <mat-icon class="mat-18">archive</mat-icon>
-                    Archive
-                  </button>
-                </mat-list-item>
-                <mat-list-item class="navListItems">
-                  <button mat-button (click)="onClick">
-                    <mat-icon class="mat-18">delete_outline</mat-icon>
-                    Trash
-                  </button>
-                </mat-list-item>
-              </mat-nav-list>
-            </mat-sidenav>
-            <mat-sidenav-content>
-              addNotes will work here
-            </mat-sidenav-content>
-          </mat-sidenav-container>
-        </div> -->
-        
-      <mat-toolbar class="dashboardToolBar">
-          <div class="iconAndTitle">
-        
-            <button mat-icon-button (click)="sidenav.toggle()">
-              <mat-icon class="mat-18">menu</mat-icon>
-            </button>
-            
-            <img class="fundooIcon" src="/../assets/Keep.png">
-        
-            <div class="dashboardTitle">FundooNote</div>
-        
-          </div>
-        
-          <div class="searchToolBar">
-        
-            <button mat-icon-button>
-              <mat-icon class="mat-18">search</mat-icon>
-            </button>
-            <input class="searchInputBar" type="text" placeholder="search">
-        
-          </div>
-        
-          <div >
-        
-              <button mat-icon-button>
-                  <mat-icon class="refresh">refresh
-                    </mat-icon>
-                </button>
-            <button mat-icon-button>
-              <mat-icon class="mat-18">view_module</mat-icon>
-            </button>
-<!--           
+<mat-toolbar class="dashboardToolBar">
+  <div class="iconAndTitle">
+
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon class="mat-18">menu</mat-icon>
+    </button>
+
+    <img class="fundooIcon" src="/../assets/Keep.png">
+
+    <div class="dashboardTitle">{{headerName}}</div>
+
+  </div>
+
+  <div class="searchToolBar">
+
+    <button mat-icon-button>
+      <mat-icon class="mat-18">search</mat-icon>
+    </button>
+    <input class="searchInputBar" type="text" placeholder="search">
+
+  </div>
+
+  <div>
+
+    <button mat-icon-button matTooltip="Refresh">
+      <mat-icon class="refresh">refresh
+      </mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="List view">
+      <mat-icon class="mat-18">view_module</mat-icon>
+    </button>
+
+    <button mat-icon-button [matMenuTriggerFor]="setting" matTooltip="Setting">
+      <mat-icon class="settings">settings
+      </mat-icon>
+    </button>
+    <mat-menu #setting="matMenu">
+      <button mat-menu-item>settings</button>
+      <button mat-menu-item>Send Feedback</button>
+      <button mat-menu-item>Help</button>
+      <button mat-menu-item>AppDownlaod</button>
+      <button mat-menu-item>KeyBoard Shortcuts</button>
 
 
 
+    </mat-menu>
+  </div>
+
+  <div>
+    <button mat-icon-button matTooltip="Google app">
+      <mat-icon class="mat-18">apps </mat-icon>
+    </button>
 
 
+    <button mat-icon-button matTooltip="Notifications">
+      <mat-icon class="notifications">notifications
+      </mat-icon>
+    </button>
 
-  
-            <button mat-icon-button>
-                <mat-icon class="settings">settings
-                  </mat-icon>
-              </button> -->
-              <button mat-icon-button  [matMenuTriggerFor]="setting">
-                 <mat-icon class="settings">settings
-                </mat-icon></button>
-<mat-menu #setting="matMenu">
-  <button mat-menu-item>settings</button>
-  <button mat-menu-item>Send Feedback</button>
-  <button mat-menu-item>Help</button>
-  <button mat-menu-item>AppDownlaod</button>
-  <button mat-menu-item>KeyBoard Shortcuts</button>
+    <button class="accountButton" [matMenuTriggerFor]="accountMenu">S</button>
+  </div>
+
+</mat-toolbar>
 
 
-
+<mat-menu #accountMenu="matMenu">
+  <span>sowndar</span>
+  <button mat-menu-item (click)="logout()">
+    <mat-icon class="mat-18">power_settings_new</mat-icon> Logout
+  </button>
 </mat-menu>
-            </div>
 
-            <div >
-          <button mat-icon-button>
-              <mat-icon class="mat-18">apps </mat-icon>
-            </button>
-        
-          
-          <button mat-icon-button>
-              <mat-icon class="notifications">notifications
-                </mat-icon>
-            </button>
-          
-          <button class="accountButton" [matMenuTriggerFor]="accountMenu">S</button>
-        </div>
-        
-        </mat-toolbar>
-        
-        
-        <mat-menu #accountMenu="matMenu">
-          <span>sowndar</span>
-          <button mat-menu-item (click)="logout()">
-            <mat-icon class="mat-18">power_settings_new</mat-icon> Logout
-          </button>
-        </mat-menu>
-       
-        <!-- <mat-sidenav-container class="sidenavBar">
-          <mat-sidenav #sidenav mode="side" opened="true" style="min-width:50px;" class="sideNav">
-            <mat-nav-list class="sideNavList"> -->
-                <mat-drawer-container class="example-container">
-                    <mat-drawer #sidenav mode="side" opened="true">
-                  <div>
-                <button mat-button  [routerLink]="['addNote']"  (click)="headerName='Fundoo Notes'" [ngClass]="{'sideNavListItems': headerName!='Fundoo Notes', 'sideNavlistItemsColored': headerName=='Fundoo Notes'}">
-                  <mat-icon>lightbulb_outline</mat-icon> Notes
-                </button>
-              </div>
-              <div>
-                <button mat-button  [routerLink]="['remainder']"  (click)="headerName='remainder'" [ngClass]="{'sideNavListItems': headerName!='Reminders', 'sideNavlistItemsColored': headerName=='Reminders'}">
-                  <mat-icon>notifications_none</mat-icon> Reminders
-                </button>
-              </div>
-              <div>
-                <button  mat-button (click)="openDialog()" class="sideNavListItems"  >
-                  <mat-icon>edit</mat-icon> Edit Labels
-                </button>
-              </div>
-              <div>
-                <button mat-button   [routerLink]="['archive']"  (click)="headerName='archive'" [ngClass]="{'sideNavListItems': headerName!='Archive', 'sideNavlistItemsColored': headerName=='Archive'}">
-                  <mat-icon>archive</mat-icon> Archive
-                </button>
-              </div>
-              <div>
-                <button mat-button  [routerLink]="['trash']" (click)="headerName='trash'" [ngClass]="{'sideNavListItems': headerName!='Trash', 'sideNavlistItemsColored': headerName=='Trash'}">
-                  <mat-icon>delete</mat-icon> Trash
-                </button>
-              </div>
-            </mat-drawer>
-            <mat-accordion >
+
+<mat-drawer-container class="example-container">
+  <mat-drawer #sidenav mode="side" opened="true">
+    <div>
+      <button mat-button [routerLink]="['addNote']" (click)="headerName='Notes'" [ngClass]="{'sideNavListItems': headerName!='Fundoo Notes', 'sideNavlistItemsColored': headerName=='Fundoo Notes'}">
+        <mat-icon>lightbulb_outline</mat-icon> Notes
+      </button>
+    </div>
+    <div>
+      <button mat-button [routerLink]="['remainder']" (click)="headerName='remainder'" [ngClass]="{'sideNavListItems': headerName!='Reminders', 'sideNavlistItemsColored': headerName=='Reminders'}">
+        <mat-icon>notifications_none</mat-icon> Reminders
+      </button>
+    </div>
+    <div>
+      <button mat-button (click)="openDialog()" class="sideNavListItems">
+        <mat-icon>edit</mat-icon> Edit Labels
+      </button>
+    </div>
+    <div>
+      <button mat-button [routerLink]="['archive']" (click)="headerName='archive'" [ngClass]="{'sideNavListItems': headerName!='Archive', 'sideNavlistItemsColored': headerName=='Archive'}">
+        <mat-icon>archive</mat-icon> Archive
+      </button>
+    </div>
+    <div>
+      <button mat-button [routerLink]="['trash']" (click)="headerName='trash'" [ngClass]="{'sideNavListItems': headerName!='Trash', 'sideNavlistItemsColored': headerName=='Trash'}">
+        <mat-icon>delete</mat-icon> Trash
+      </button>
+    </div>
+  </mat-drawer>
+  <!-- <mat-accordion >
             
 
 
@@ -215,33 +114,27 @@
                   
                 </mat-expansion-panel-header>
                 
-                
-
-                   
-                  
-                      <!-- <textarea class="addNoteInput" placeholder="Title" ></textarea> -->
-                  
                       <textarea class="addNoteInput" placeholder="Take a note..."></textarea>
                   
                     
                     
 
-                <!-- <mat-form-field>
-                  <input matInput placeholder="First name">
-                </mat-form-field> -->
+              
                 <mat-action-row>
+                  
                   <div style="width:85cm">
-                  <button mat-icon-button >
+                  <button mat-icon-button    matTooltip="Remind me">
+                    
                         <mat-icon class="add_alert">add_alert</mat-icon>
                       </button>
                     
                     
-                      <button mat-icon-button >
+                      <button mat-icon-button   matTooltip="collaborator">
                           <mat-icon class="person_add">person_add</mat-icon>
                         </button>
                     
                       
-                        <button mat-icon-button >
+                        <button mat-icon-button matTooltip="Change color" >
                           
                             <button mat-icon-button  [matMenuTriggerFor]="palette">
                                 <mat-icon class="palette">palette
@@ -256,25 +149,18 @@
                
 
                 </mat-menu>
-
-
-
-
-
-
-
                           </button>
                        
                         
-                        <button mat-icon-button >
+                        <button mat-icon-button matTooltip="Add image" >
                               <mat-icon class="photo">photo</mat-icon>
                             </button> 
                         
-                            <button mat-icon-button >
+                            <button mat-icon-button matTooltip="Archive" >
                                 <mat-icon class="archive">archive</mat-icon>
                               </button>
                          
-                                <button mat-button [matMenuTriggerFor]="menu">
+                                <button mat-button [matMenuTriggerFor]="menu" matTooltip="More">
                                     <mat-icon class="more_vert">more_vert</mat-icon>
 
                                 </button>
@@ -291,32 +177,14 @@
                                    <button mat-button color="warn" (click)="close()">close</button>
                                   
                 </mat-action-row>
-                  <!-- <mat-form-field>
-                  <input matInput placeholder="First name">
-                </mat-form-field>
-            
-                <mat-form-field>
-                  <input matInput placeholder="Age">
-                </mat-form-field>
+                 
               </mat-expansion-panel>
-              <mat-expansion-panel (opened)="panelOpenState = true"
-                                   (closed)="panelOpenState = false">
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    Self aware panel
-                  </mat-panel-title>
-                  <mat-panel-description>
-                    Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                  </mat-panel-description>
-                </mat-expansion-panel-header>
-                <p>I'm visible because I am open</p> -->
-              </mat-expansion-panel>
-            </mat-accordion>   
-            
-           
-          </mat-drawer-container>
-          
-            <!-- </mat-nav-list>
-          </mat-sidenav>
-        </mat-sidenav-container> -->
-     
+            </mat-accordion>    -->
+
+  <mat-drawer-content>
+
+    <router-outlet>
+
+    </router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

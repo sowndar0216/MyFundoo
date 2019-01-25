@@ -32,7 +32,14 @@ export class UserServiceService {
    }
    public verifyUser(token:string):any
    {
-     return this.http.get(this.userUrl+'verifyemail/'+token);
+     return this.http.get(this.userUrl+'verifyemail'+token);
    }
-
+public sendOtp(user:LoginModel):any{
+  console.log(user);
+  return this.http.post<LoginModel>(this.userUrl+'forgetPassword',user);
+}
+public setPassword(otp:OtpVerify): any{
+  console.log(otp)
+  return this.http.post<OtpVerify>(this.userUrl+'resetPassword',otp)
+}
 }

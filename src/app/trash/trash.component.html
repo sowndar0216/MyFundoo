@@ -1,44 +1,55 @@
-<div class="addNote">
-   
-    <div class="addNoteInputDiv">
-  
-      <textarea class="addNoteInput" placeholder="Title" ></textarea>
-  
-      <textarea class="addNoteInput" placeholder="Take a note..." ></textarea>
-  
-    </div>
-  
-    <!-- <div class="addNoteControlIcon">
-  
-      <button mat-icon-button matTooltip="Remind me">
-        <mat-icon class="mat-18">notifications
-        </mat-icon>
-      </button>
-  
-      <button mat-icon-button matTooltip="Collaborator">
-        <mat-icon class="mat-18">person_add_outline
-        </mat-icon>
-      </button>
-  
-      <button mat-icon-button matTooltip="Change color">
-        <mat-icon class="mat-18">color_lens</mat-icon>
-      </button>
-  
-      <button mat-icon-button matTooltip="Add image">
-        <mat-icon class="mat-18">photo</mat-icon>
-      </button>
-  
-      <button mat-icon-button matTooltip="Archive">
-        <mat-icon class="mat-18">archive</mat-icon>
-      </button>
-  
-      <button mat-icon-button matTooltip="More">
-        <mat-icon class="mat-18">more_vert</mat-icon>
-      </button>
-  
-      <button mat-button type="submit" class="closeNoteButton" (click)="addNoteClose()">Close</button>
-  
-    </div> -->
-  
-  </div>
- 
+<div style="width:85cm">
+    <button mat-icon-button matTooltip="Remind me">
+
+        <mat-icon class="add_alert">add_alert</mat-icon>
+    </button>
+
+
+    <button mat-icon-button matTooltip="collaborator">
+        <mat-icon class="person_add">person_add</mat-icon>
+    </button>
+
+
+    <button mat-icon-button matTooltip="Change color">
+
+        <button mat-icon-button [matMenuTriggerFor]="palette">
+            <mat-icon class="palette">palette
+            </mat-icon>
+        </button>
+        <mat-menu #palette="matMenu">
+            <button mat-menu-item> <button mat-mini-fab></button></button>
+            <button mat-menu-item> <button mat-mini-fab color="primary"></button>
+            </button>
+            <button mat-menu-item><button mat-mini-fab color=#64b5f6></button></button>
+            <button mat-menu-item><button mat-mini-fab color="black"></button></button>
+            <button mat-menu-item> <button mat-mini-fab color="green"></button></button>
+
+
+        </mat-menu>
+
+    </button>
+
+
+    <button mat-icon-button matTooltip="Add image">
+        <mat-icon class="photo">photo</mat-icon>
+    </button>
+
+    <button mat-icon-button matTooltip="Archive">
+        <mat-icon class="archive">archive</mat-icon>
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="menu" matTooltip="More">
+        <mat-icon class="more_vert">more_vert</mat-icon>
+
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>add Label</button>
+        <button mat-menu-item>Show tick boxes</button>
+    </mat-menu>
+</div>
+
+
+
+
+<button mat-button color="warn" (click)="close()">close</button>

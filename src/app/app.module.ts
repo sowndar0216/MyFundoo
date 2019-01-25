@@ -20,6 +20,8 @@ import { TrashComponent } from './trash/trash.component';
 import { OtpComponent } from './otp/otp.component';
 import { UserServiceService } from './user-service.service';
 import{HttpClientModule} from '@angular/common/http';
+import { SetPasswordComponent } from './set-password/set-password.component';
+import { NotesComponent } from './notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import{HttpClientModule} from '@angular/common/http';
     ArchiveComponent,
     TrashComponent,
     OtpComponent,
+    SetPasswordComponent,
+    NotesComponent,
     
 
   ],

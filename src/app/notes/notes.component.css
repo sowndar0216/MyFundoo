@@ -1,0 +1,16 @@
+.addNoteInputDiv {
+
+    width:600px;
+    
+    margin:0 auto;
+    margin-top: 110px;
+  }
+  .addNoteInput {
+    border: none;
+    outline: none;
+    resize: none;
+    width: 575px;
+    font-size: 14px;
+  
+  }
+  

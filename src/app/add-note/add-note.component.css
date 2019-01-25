@@ -1,4 +1,4 @@
-.example-sidenav-content {
+/* .example-sidenav-content {
     display: flex;
     height: 100%;
     align-items: center;
@@ -8,14 +8,57 @@
   }
   .noteInputBar {
 
-    /* display: flex;
-    padding: 1%; 
-    
-    border: 2px ;
-    width: 40%; */
     width:600px;
     
     margin:0 auto;
     margin-top: 40px;
   }
+ 
+
+.addNoteInputDiv {
+
+  width:600px;
   
+  margin:0 auto;
+  margin-top: 25px;
+}
+
+.addNoteInput {
+  border: none;
+  outline: none;
+  resize: none;
+  width: 575px;
+  font-size: 14px;
+
+} */
+.center{
+  margin-top: 5%;
+  margin-bottom: auto;
+  margin-left:auto;
+  margin-right: auto;
+  width: 50%; 
+}.inputclass{
+
+  outline: none;
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+  border: solid 0px transparent;
+}
+
+
+.takeanote{
+  outline: none;
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+  border: solid 0px transparent;
+  max-height: 400px;
+  overflow-y: auto; 
+}
+
+.cardresize{
+
+  min-width: 170px;
+  min-height:100px;
+}

@@ -9,6 +9,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  public headerName = "Fundoo Notes";
   panelOpenState = false;
   viewChange=false;
   /** Based on the screen size, switch from standard to one column per row */
@@ -17,6 +18,11 @@ export class DashboardComponent {
 
     this.router.navigate(["login"])
   }
+
+
+
+
+  
   // note():void{
   //   this.router.navigate(["addNote"])
   // }

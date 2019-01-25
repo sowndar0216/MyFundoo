@@ -11,6 +11,8 @@ import {RemainderComponent} from './remainder/remainder.component';
 import {ArchiveComponent} from './archive/archive.component';
 import { TrashComponent } from './trash/trash.component';
 import { OtpComponent } from './otp/otp.component';
+import { SetPasswordComponent } from './set-password/set-password.component';
+import { NotesComponent } from './notes/notes.component';
 const appRoutes: Routes =[
  {
   path:'register',
@@ -62,6 +64,13 @@ component:OtpComponent
   path:'trash',
   component:TrashComponent
   
+  },
+  {
+    path:'setpassword',
+    component:SetPasswordComponent
+  },{
+    path:'notes',
+    component:NotesComponent
   }
 
 ];

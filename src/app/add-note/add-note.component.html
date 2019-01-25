@@ -1,38 +1,179 @@
+<!-- 
+<div class="center">
+<mat-accordion >
+            
 
 
-<body>
-  <!-- <mat-accordion class="noteInputBar">
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Personal data
-        </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-        </mat-panel-description>
-      </mat-expansion-panel-header>
+    <mat-expansion-panel class="addNoteInputDiv" (opened)="panelOpenState = true"
+           (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+   <textarea class="addNoteInput" placeholder=" {{panelOpenState ? 'title' : 'Take a note..'}}" ></textarea> 
+
+        
+      </mat-panel-title>
+      
+    </mat-expansion-panel-header>
+    
+    
+
+       
+      
+           <textarea class="addNoteInput" placeholder="Title" ></textarea> 
+      
+          <textarea class="addNoteInput" placeholder="Take a note..."></textarea>
+      
+        
+        
+
   
-      <mat-form-field>
-        <input matInput placeholder="First name">
-      </mat-form-field>
-  
-      <mat-form-field>
-        <input matInput placeholder="Age">
-      </mat-form-field>
-    </mat-expansion-panel>
-    <mat-expansion-panel (opened)="panelOpenState = true"
-                         (closed)="panelOpenState = false">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Self aware panel
-        </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
-    </mat-expansion-panel>
-  </mat-accordion>   
-  <app-dashboard></app-dashboard>
-  -->
-</body>
+    <mat-action-row>
+      <div style="width:85cm">
+      <button mat-icon-button >
+            <mat-icon class="add_alert">add_alert</mat-icon>
+          </button>
+        
+        
+          <button mat-icon-button >
+              <mat-icon class="person_add">person_add</mat-icon>
+            </button>
+        
+          
+            <button mat-icon-button >
+              
+                <button mat-icon-button  [matMenuTriggerFor]="palette">
+                    <mat-icon class="palette">palette
+                   </mat-icon></button>
+   <mat-menu #palette="matMenu">
+     <button mat-menu-item>  <button mat-mini-fab></button></button>
+     <button mat-menu-item> <button mat-mini-fab color="primary"></button>
+    </button>
+      <button mat-menu-item><button mat-mini-fab color=#64b5f6></button></button>
+     <button mat-menu-item><button mat-mini-fab color="black"></button></button>
+     <button mat-menu-item> <button mat-mini-fab color="green"></button></button>
+   
+
+    </mat-menu>
+
+
+
+
+
+
+
+              </button>
+           
+            
+            <button mat-icon-button >
+                  <mat-icon class="photo">photo</mat-icon>
+                </button> 
+            
+                <button mat-icon-button >
+                    <mat-icon class="archive">archive</mat-icon>
+                  </button>
+             
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon class="more_vert">more_vert</mat-icon>
+
+                    </button>
+                
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item>add Label</button>
+                      <button mat-menu-item>Show tick boxes</button>
+                    </mat-menu>
+                  </div>
+
+
+(click)="noteSave()"
+
+                       <button mat-button color="warn" (click)="close()">close</button>
+                      
+    </mat-action-row>
+     
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+
+</div> -->
+<div class="center">
+    <div fxLayout="column" fxLayoutGap="10px"> 
+        <mat-card *ngIf=!barshow (click)="fullCardShow()" style="min-width: 300px; margin:20px">
+          Take A Note ...
+        
+        </mat-card>
+        
+        <mat-card *ngIf=barshow >
+        <mat-card-title >   
+          <input class="inputclass" matInput placeholder="Title" style="margin-left:20px;"  > 
+          </mat-card-title>   
+          <mat-card-subtitle>
+        <div class ="takeanote" contenteditable="true"  aria-placeholder='Enter some text' style="margin-left:20px;"> 
+        <!-- [textContent]="createnote.content" (input)="createnote.content=$event.target.textContent"  -->
+        </div>
+        </mat-card-subtitle>
+        <div fxLayout="row">
+       
+                <button mat-icon-button    matTooltip="Remind me">
+                  
+                      <mat-icon class="add_alert">add_alert</mat-icon>
+                    </button>
+                  
+                  
+                    <button mat-icon-button   matTooltip="collaborator">
+                        <mat-icon class="person_add">person_add</mat-icon>
+                      </button>
+                  
+                    
+                      <button mat-icon-button matTooltip="Change color" >
+                        
+                          <button mat-icon-button  [matMenuTriggerFor]="palette">
+                              <mat-icon class="palette">palette
+                             </mat-icon></button>
+             <mat-menu #palette="matMenu">
+               <button mat-menu-item>  <button mat-mini-fab></button></button>
+               <button mat-menu-item> <button mat-mini-fab color="primary"></button>
+              </button>
+                <button mat-menu-item><button mat-mini-fab color=#64b5f6></button></button>
+               <button mat-menu-item><button mat-mini-fab color="black"></button></button>
+               <button mat-menu-item> <button mat-mini-fab color="green"></button></button>
+             
+
+              </mat-menu>
+
+
+
+                        </button>
+                     
+                      
+                      <button mat-icon-button matTooltip="Add image" >
+                            <mat-icon class="photo">photo</mat-icon>
+                          </button> 
+                      
+                          <button mat-icon-button matTooltip="Archive" >
+                              <mat-icon class="archive">archive</mat-icon>
+                            </button>
+                       
+                              <button mat-button [matMenuTriggerFor]="menu" matTooltip="More">
+                                  <mat-icon class="more_vert">more_vert</mat-icon>
+
+                              </button>
+                          
+                              <mat-menu #menu="matMenu">
+                                <button mat-menu-item>add Label</button>
+                                <button mat-menu-item>Show tick boxes</button>
+                              </mat-menu>
+                           
+
+
+
+
+                                 <button mat-button color="warn" (click)="close()">close</button>
+                
+           
+        </div>
+        </mat-card>
+        
+        </div>
+        
+</div>
