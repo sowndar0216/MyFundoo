@@ -15,7 +15,8 @@ export class DashboardComponent {
   /** Based on the screen size, switch from standard to one column per row */
   constructor(private router: Router) { }
   logout():void{
-
+ 
+    localStorage.removeItem('jwtToken');
     this.router.navigate(["login"])
   }
 
