@@ -12,6 +12,7 @@ import {CreateNoteModel} from '../Model/add-notes.model';
   
   barshow:boolean=false;
   showicon:boolean=true;
+  
   createnote:CreateNoteModel=new CreateNoteModel;
   constructor(private noteservice:NoteServiceService,private snackBar: MatSnackBar) { }
   
@@ -22,11 +23,15 @@ import {CreateNoteModel} from '../Model/add-notes.model';
   
   }
   ngOnInit() {
+
   }
   
   noteSave()
   {
     this.showicon=false;
+  
+
+
   this.barshow=!this.barshow;
   this.createnote.pinned=true;
   
@@ -34,7 +39,7 @@ import {CreateNoteModel} from '../Model/add-notes.model';
   response =>{
   if(response.statusCode==166)
   {
-  this.snackBar.open(response.statusMessage,"",{
+  this.snackBar.open(response.statusMessage,"added",{
   duration:2000,
   })
   }
@@ -44,8 +49,8 @@ import {CreateNoteModel} from '../Model/add-notes.model';
   console.log("Error",error);
   } 
   );
-  console.log(this.createnote.title);
-  console.log(this.createnote.description);
+  // console.log(this.createnote.title);
+  // console.log(this.createnote.description);
   }
   
   }

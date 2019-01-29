@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import{MaterialModule} from '../material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent, DialogOverviewExampleDialog } from './dashboard/dashboard.component';
 import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AddNoteComponent } from './add-note/add-note.component';
@@ -38,7 +38,7 @@ import { NotesComponent } from './notes/notes.component';
     OtpComponent,
     SetPasswordComponent,
     NotesComponent,
-    
+    DialogOverviewExampleDialog
 
   ],
   imports: [
@@ -57,6 +57,7 @@ import { NotesComponent } from './notes/notes.component';
    LayoutModule
   ],
   providers: [UserServiceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[DialogOverviewExampleDialog]
 })
 export class AppModule { }

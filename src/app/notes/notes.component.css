@@ -1,16 +1,38 @@
-.addNoteInputDiv {
+.inputclass{
 
-    width:600px;
-    
-    margin:0 auto;
-    margin-top: 110px;
-  }
-  .addNoteInput {
-    border: none;
-    outline: none;
-    resize: none;
-    width: 575px;
-    font-size: 14px;
-  
+  outline: none;
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+  border: solid 0px transparent;
   }
   
+  
+  .takeanote{
+  outline: none;
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+  border: solid 0px transparent;
+  max-height: 400px;
+  overflow-y: auto; 
+  }
+  
+  .cardresize{
+  
+  min-width: 150px;
+  /* min-height:100px; */
+  }
+  
+  .color1{
+  color:yellow;
+  }
+  
+.center{
+ 
+  margin-top: 8%;
+  margin-bottom: auto;
+  margin-left:5%;
+  margin-right: auto;
+  width: 28%; 
+}

@@ -4,12 +4,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
 MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
+
 MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule,MatSidenavModule,
-MatListModule,MatExpansionModule,MatSnackBarModule,MatTooltipModule
+MatListModule,MatExpansionModule,MatSnackBarModule,MatTooltipModule,MatDatepickerModule,MatNativeDateModule
 } from '@angular/material';
 @NgModule({
 imports: [
-CommonModule, 
+CommonModule, MatNativeDateModule, 
 MatTooltipModule,
 MatExpansionModule,
 MatToolbarModule,
@@ -23,18 +24,19 @@ MatIconModule,
 MatProgressSpinnerModule,
 MatListModule,
 MatSidenavModule,
-MatSnackBarModule
+MatSnackBarModule,MatDatepickerModule
 ],
 exports: [
+  
+  MatDatepickerModule,
   MatTooltipModule,
-  MatSnackBarModule,
+  MatSnackBarModule,MatNativeDateModule,
   MatExpansionModule,
-CommonModule,
+CommonModule,MatDialogModule,
 MatToolbarModule, 
 MatButtonModule, 
 MatCardModule, 
 MatInputModule, 
-MatDialogModule, 
 MatTableModule, 
 MatMenuModule,
 MatIconModule,
