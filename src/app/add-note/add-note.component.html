@@ -165,28 +165,27 @@
                         <mat-icon class="person_add" style="font-size: 15px;">person_add</mat-icon>
                       </button>
                   
-                    
-                      <button mat-icon-button matTooltip="Change color" >
-                        
-                          <button mat-icon-button  [matMenuTriggerFor]="palette">
-                              <mat-icon class="palette" style="font-size: 17px;">palette
-                             </mat-icon></button>
-             <mat-menu #palette="matMenu">
-               <button mat-menu-item>  <button mat-mini-fab></button></button>
-               <button mat-menu-item> <button mat-mini-fab color="primary"></button>
-              </button>
-                <button mat-menu-item><button mat-mini-fab color=#64b5f6></button></button>
-               <button mat-menu-item><button mat-mini-fab color="black"></button></button>
-               <button mat-menu-item> <button mat-mini-fab color="green"></button></button>
-             
-
-              </mat-menu>
-
-
-
-                        </button>
                      
-                      
+                         
+            <button mat-icon-button [matMenuTriggerFor]="menucolor"  matTooltip="change color"> <!--*ngFor="let note of allnotes" -->
+              <mat-icon  style="font-size: 15px;">
+              palette
+              </mat-icon>
+              </button>
+              <mat-menu #menucolor="matMenu">
+              <mat-list>
+              <div *ngFor= "let colorx of colors">
+              <span *ngFor="let singlecolor of colorx">
+              <button mat-icon-button >
+              <mat-icon [style.color]="singlecolor">fiber_manual_record</mat-icon>
+              <!-- <i style="color:${{singlecolor}}">{{singlecolor}} </i> -->
+              </button>
+              </span>
+              </div>
+              </mat-list>
+              </mat-menu>  
+                     
+                       
                       <button mat-icon-button matTooltip="Add image" >
                             <mat-icon class="photo" style="font-size: 17px;">photo</mat-icon>
                           </button> 
@@ -217,11 +216,27 @@
         
       
 </div>
-<div *ngIf=getnotes>
 
-<app-notes></app-notes>
+
+
+
+
+
+
+
+<div  *ngIf=getnote >
+  <div  fxLayout="row wrap"  >
+      
+    <app-notes *ngFor="let note of allnotes" [noteDetail]=note class="notepading"></app-notes>
 
 </div>
+</div>
+<!-- <div  *ngIf=getnewnote >
+    <div fxLayout="row" fxLayoutAlign="center center"  class="notepading">
+      <app-notes  [noteDetail]=newnote class="notepading"></app-notes>
+  
+  </div>
+  </div> -->
 <div class="bulb" *ngIf=showicon>
   
 <i class="material-icons " style="font-size: 90px;" >lightbulb_outline</i>

@@ -31,6 +31,11 @@
   font-size: 14px;
 
 } 
+.gapfrom{
+
+  margin-left: 10%;
+  margin-left: 20%;
+}
 .center{
  
   margin-top: 4%;
@@ -48,7 +53,10 @@
   border-color: transparent;
   border: solid 0px transparent;
 }
-
+.notepading{
+  display: flex;
+  justify-content: space-between;
+}
 
 .takeanote{
   resize: none;

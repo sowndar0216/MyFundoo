@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {CreateNoteModel} from '../Model/add-notes.model';
 import{NoteServiceService} from '../note-service.service';
 import {MatSnackBar} from '@angular/material';
@@ -11,34 +11,18 @@ styleUrls: ['./notes.component.css']
 })
 export class NotesComponent implements OnInit {
 
-    private  allnotes:CreateNoteModel[];
 createnote:CreateNoteModel=new CreateNoteModel;
 
 constructor(private noteservice:NoteServiceService,private snackBar: MatSnackBar,private dialog: MatDialog) {
 var arr_names:string[] = new Array();
 }
-getnotes:boolean=false;
+@Input() noteDetail:CreateNoteModel;
 
-
-
+private colors:string[][]=[["white",'rgb(228, 70, 104)','rgb(238, 148, 96)','rgb(243, 215, 92)'],['rgb(173, 196, 92)','rgb(103, 226, 216)','rgb(144, 243, 250)','rgb(54, 166, 240)'],[ 'rgb(163, 160, 247)',
+'rgb(222, 160, 247)','rgb(240, 183, 145)','rgb(225, 231, 231)']];
 ngOnInit() {
  
- 
-
-
-      this.noteservice.getnotes().subscribe(
-
-         response=> {
-           //  localStorage.setItem('jwtToken',data.headers.get('jwtTokenxxx'));
-           console.log(response);
-         this.allnotes=response;
-         if(response!=isNaN)
-{
-    this.getnotes=true;
-}
-            }
-     )
-
+ console.log(this.noteDetail,'hello')
 
 }
 
@@ -89,8 +73,25 @@ console.log("Error",error);
 // });
 // }
 
-// colorsshow(){
-// }
+// // 
+// colorchange(singlecolor:string){
+//     this.notedetails.color=singlecolor;
+//     this.notecrudservice.updateNote(this.notedetails).subscribe(
+//       response => {
+//         if(response.statusCode==166)
+//         {
+//           this.snackBar.open(response.statusMessage,"",{
+//             duration:2000,
+//           })
+//         }
+//         this.cardupdate.changemessage();
+//       },
+//       error => {
+//          console.log("Error",error);
+//       } 
+//       );
+      
 
+//   }
 
 }

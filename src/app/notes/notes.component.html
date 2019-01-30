@@ -1,13 +1,13 @@
 
-<div class="center" *ngIf=getnotes>
+<div class="center" >
 <mat-card class ="cardresize" ><!-- -->
   <mat-card-title >  
-  <p >{{createnote.title}}</p>
+  {{noteDetail.title}}
   </mat-card-title>
   
   <mat-card-subtitle >
   <p>
-  {{createnote.description}}
+  {{noteDetail.description}}
   </p> 
   </mat-card-subtitle>
   
@@ -33,25 +33,26 @@ Reminder:
         </button>
     
       
-        <button mat-icon-button matTooltip="Change color" >
+   
           
-            <button mat-icon-button  [matMenuTriggerFor]="palette">
-                <mat-icon class="palette" style="font-size: 17px;">palette
-               </mat-icon></button>
-<mat-menu #palette="matMenu">
- <button mat-menu-item>  <button mat-mini-fab></button></button>
- <button mat-menu-item> <button mat-mini-fab color="primary"></button>
-</button>
-  <button mat-menu-item><button mat-mini-fab color=#64b5f6></button></button>
- <button mat-menu-item><button mat-mini-fab color="black"></button></button>
- <button mat-menu-item> <button mat-mini-fab color="green"></button></button>
-
-
-</mat-menu>
-
-
-
-          </button>
+            <button mat-icon-button [matMenuTriggerFor]="menucolor"  matTooltip="change color"> <!--*ngFor="let note of allnotes" -->
+              <mat-icon  style="font-size: 15px;">
+              palette
+              </mat-icon>
+              </button>
+              <mat-menu #menucolor="matMenu">
+              <mat-list>
+              <div *ngFor= "let colorx of colors">
+              <span *ngFor="let singlecolor of colorx">
+              <button mat-icon-button >
+              <mat-icon [style.color]="singlecolor">fiber_manual_record</mat-icon>
+              <!-- <i style="color:${{singlecolor}}">{{singlecolor}} </i> -->
+              </button>
+              </span>
+              </div>
+              </mat-list>
+              </mat-menu>  
+           
        
         
         <button mat-icon-button matTooltip="Add image" >
