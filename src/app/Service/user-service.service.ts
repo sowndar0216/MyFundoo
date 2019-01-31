@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders}  from '@angular/common/http';
-import { RegisterModel } from './Model/register.model';
-import { OtpVerify } from './Model/otp.model';
-import { LoginModel } from './Model/login.model';
+import { RegisterModel } from '../Model/register.model';
+import { OtpVerify } from '../Model/otp.model';
+import { LoginModel } from '../Model/login.model';
+
+
 
 
 

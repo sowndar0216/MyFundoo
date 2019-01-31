@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material'
-import { LoginModel } from '../Model/login.model';
-import { UserServiceService } from '../user-service.service';
+
+
 import { MatSnackBar } from '@angular/material';
 import { FormGroup,FormBuilder, Validators} from '@angular/forms';
+import { LoginModel } from 'src/app/Model/login.model';
+import { UserServiceService } from 'src/app/Service/user-service.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

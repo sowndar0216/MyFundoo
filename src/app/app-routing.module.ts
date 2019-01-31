@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import{RouterModule,Routes} from '@angular/router';
-import { RegisterComponent } from './register/register.component';
-import { ForgotPasswordComponent } from './forgotPassword/forgot-password.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import {AddNoteComponent} from './add-note/add-note.component';
-import {RemainderComponent} from './remainder/remainder.component';
-import {ArchiveComponent} from './archive/archive.component';
-import { TrashComponent } from './trash/trash.component';
-import { OtpComponent } from './otp/otp.component';
-import { SetPasswordComponent } from './set-password/set-password.component';
-import { NotesComponent } from './notes/notes.component';
+import { ForgotPasswordComponent } from './Component/forgotPassword/forgot-password.component';
+import { LoginComponent } from './Component/login/login.component';
+import { HomeComponent } from './Component/home/home.component';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
+import {AddNoteComponent} from './Component/add-note/add-note.component';
+import {RemainderComponent} from './Component/remainder/remainder.component';
+import {ArchiveComponent} from './Component/archive/archive.component';
+import { TrashComponent } from './Component/trash/trash.component';
+import { OtpComponent } from './Component/otp/otp.component';
+import { SetPasswordComponent } from './Component/set-password/set-password.component';
+import { NotesComponent } from './Component/notes/notes.component';
+import { RegisterComponent } from './Component/register/register.component';
 const appRoutes: Routes =[
  {
   path:'register',

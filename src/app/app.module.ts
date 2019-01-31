@@ -1,27 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
+
 import { AppRoutingModule } from './/app-routing.module';
-import { ForgotPasswordComponent } from './forgotPassword/forgot-password.component';
+import { ForgotPasswordComponent } from './Component/forgotPassword/forgot-password.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './Component/login/login.component';
 import{MaterialModule} from '../material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
-import { DashboardComponent, DialogOverviewExampleDialog } from './dashboard/dashboard.component';
+import { HomeComponent } from './Component/home/home.component';
+import { DashboardComponent, DialogOverviewExampleDialog } from './Component/dashboard/dashboard.component';
 import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
-import { AddNoteComponent } from './add-note/add-note.component';
-import { RemainderComponent } from './remainder/remainder.component';
-import { ArchiveComponent } from './archive/archive.component';
-import { TrashComponent } from './trash/trash.component';
-import { OtpComponent } from './otp/otp.component';
-import { UserServiceService } from './user-service.service';
+import { AddNoteComponent } from './Component/add-note/add-note.component';
+import { RemainderComponent } from './Component/remainder/remainder.component';
+import { ArchiveComponent } from './Component/archive/archive.component';
+import { TrashComponent } from './Component/trash/trash.component';
+import { OtpComponent } from './Component/otp/otp.component';
 import{HttpClientModule} from '@angular/common/http';
-import { SetPasswordComponent } from './set-password/set-password.component';
-import { NotesComponent } from './notes/notes.component';
+import { SetPasswordComponent } from './Component/set-password/set-password.component';
+import { NotesComponent } from './Component/notes/notes.component';
+import { RegisterComponent } from './Component/register/register.component';
+import { UserServiceService } from './Service/user-service.service';
+
 
 @NgModule({
   declarations: [

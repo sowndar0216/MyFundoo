@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from '../user-service.service';
+
+
 import { MatSnackBar } from '@angular/material';
 import {Router} from '@angular/router';
 import { FormGroup,FormBuilder, Validators} from '@angular/forms';
-import { OtpVerify } from '../Model/otp.model';
+import { OtpVerify } from 'src/app/Model/otp.model';
+import { UserServiceService } from 'src/app/Service/user-service.service';
 @Component({
   selector: 'app-otp',
   templateUrl: './otp.component.html',

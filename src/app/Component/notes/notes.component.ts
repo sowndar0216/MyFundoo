@@ -1,10 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {CreateNoteModel} from '../Model/add-notes.model';
-import{NoteServiceService} from '../note-service.service';
+
+
 import {MatSnackBar} from '@angular/material';
 import {MatDialog} from '@angular/material';
 import { ArchiveComponent } from '../archive/archive.component';
 import { AddNoteComponent } from '../add-note/add-note.component';
+import { CreateNoteModel } from 'src/app/Model/add-notes.model';
+import { NoteServiceService } from 'src/app/Service/note-service.service';
+
 
 @Component({
 selector: 'app-notes',

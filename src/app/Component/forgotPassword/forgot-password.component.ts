@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from '../user-service.service';
 import { MatSnackBar } from '@angular/material';
 import { FormGroup,FormBuilder, Validators} from '@angular/forms';
-import { LoginModel } from '../Model/login.model';
 import {Router} from '@angular/router';
+import { LoginModel } from 'src/app/Model/login.model';
+import { UserServiceService } from 'src/app/Service/user-service.service';
 
 @Component({
   selector: 'app-forgot-password',

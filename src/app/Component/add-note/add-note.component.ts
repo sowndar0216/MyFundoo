@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import{NoteServiceService} from '../note-service.service';
+
 import {MatSnackBar, throwMatDialogContentAlreadyAttachedError} from '@angular/material';
-import {CreateNoteModel} from '../Model/add-notes.model';
 import { isArray, isNull, isNullOrUndefined } from 'util';
+
+
+import { NoteServiceService } from 'src/app/Service/note-service.service';
+import { CreateNoteModel } from 'src/app/Model/add-notes.model';
 
 @Component({
   selector: 'app-add-note',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import {CreateNoteModel} from './Model/add-notes.model';
 import { Observable } from 'rxjs';
+import { CreateNoteModel } from '../Model/add-notes.model';
 
 
 

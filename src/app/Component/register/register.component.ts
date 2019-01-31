@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { FormGroup,FormBuilder, Validators} from '@angular/forms';
 import { NumberValueAccessor } from '@angular/forms/src/directives';
-import { RegisterModel } from '../Model/register.model';
-import { UserServiceService } from '../user-service.service';
+
 import { MatSnackBar } from '@angular/material';
+import { UserServiceService } from 'src/app/Service/user-service.service';
+import { RegisterModel } from 'src/app/Model/register.model';
 
 @Component({
   selector: 'app-register',

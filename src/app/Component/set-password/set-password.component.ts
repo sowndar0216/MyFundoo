@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { FormGroup,FormBuilder, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import { OtpVerify } from '../Model/otp.model';
-import { UserServiceService } from '../user-service.service';
+import { UserServiceService } from 'src/app/Service/user-service.service';
+import { OtpVerify } from 'src/app/Model/otp.model';
+
 @Component({
   selector: 'app-set-password',
   templateUrl: './set-password.component.html',
