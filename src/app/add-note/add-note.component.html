@@ -190,8 +190,8 @@
                             <mat-icon class="photo" style="font-size: 17px;">photo</mat-icon>
                           </button> 
                       
-                          <button mat-icon-button matTooltip="Archive" >
-                              <mat-icon class="archive" style="font-size: 17px;">archive</mat-icon>
+                          <button mat-icon-button matTooltip="Archive"  (click)="archive()">
+                              <mat-icon class="archive" style="font-size: 17px;" >archive</mat-icon>
                             </button>
                        
                               <button mat-button [matMenuTriggerFor]="menu" matTooltip="More">

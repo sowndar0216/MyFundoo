@@ -51,6 +51,57 @@ import { isArray, isNull, isNullOrUndefined } from 'util';
   }
   
   
+  archive(){
+    console.log("archived");
+    
+//this.createnote.archive=1;
+
+//this.createnote.color="red";
+
+this.barshow=!this.barshow;
+
+
+    
+  
+//console.log(this.createnote,'ssds')
+if(this.createnote.title !=null){
+this.noteservice.createArchiveNote(this.createnote).subscribe(
+response =>{
+
+if(response.statusCode==166)
+{
+this.ngOnInit();
+this.snackBar.open(response.statusMessage,"added",{
+duration:2000,
+})
+}
+
+},
+error =>{
+console.log("Error",error);
+} 
+);
+this.newnote=this.createnote;
+
+this.createnote=new CreateNoteModel();
+}
+// console.log(this.createnote.title);
+// console.log(this.createnote.description);
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
   noteSave()
   {
     this.showicon=false;
@@ -59,7 +110,7 @@ import { isArray, isNull, isNullOrUndefined } from 'util';
     this.barshow=!this.barshow;
 
 
-    
+    console.log(this.createnote.archive);
   
   //console.log(this.createnote,'ssds')
   if(this.createnote.title !=null){

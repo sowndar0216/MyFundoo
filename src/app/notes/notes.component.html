@@ -59,10 +59,12 @@ Reminder:
               <mat-icon class="photo" style="font-size: 15px;">photo</mat-icon>
             </button> 
         
-            <button mat-icon-button matTooltip="Archive" >
-                <mat-icon class="archive" style="font-size: 15px;">archive</mat-icon>
+            <button *ngIf=archiveView mat-icon-button matTooltip="Archive" (click)="archive()" >
+                <mat-icon class="archive" style="font-size: 15px;">archive </mat-icon>
               </button>
-         
+              <button *ngIf=unarchiveView mat-icon-button matTooltip="UnArchive" (click)="unarchive()" >
+                <mat-icon class="archive" style="font-size: 15px;">unarchive </mat-icon>
+              </button>
                 <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="More">
                     <mat-icon class="more_vert"style="font-size: 15px;">more_vert</mat-icon>
 
@@ -71,6 +73,9 @@ Reminder:
                 <mat-menu #menu="matMenu">
                   <button mat-menu-item>add Label</button>
                   <button mat-menu-item (click)="noteDelete()">Delete Note</button>
+                  <button mat-menu-item>Make a copy</button>
+                  <button mat-menu-item>show tick boxes</button>
+                  <button mat-menu-item>Copy to Google docs</button>
 
                 </mat-menu>
              

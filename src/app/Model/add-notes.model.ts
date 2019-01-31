@@ -4,10 +4,11 @@ export class CreateNoteModel{
     id:number; //cannot be null
     pinned:boolean;
     color:string;
-    archive:boolean;
+    archive:number;
     trash:boolean;
     createStamp:Date;
     image:string;
     lastModifiedStamp:string;
     remainder:string;
+    noteId:number;
     }

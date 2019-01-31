@@ -3,7 +3,7 @@ export class NoteModel{
     body: String;
     color: String;
     reminder: String;
-    archive: boolean;
+    archive: Number;
     pin: boolean;
     trash: boolean;
     userID:number;

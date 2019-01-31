@@ -1,6 +1,31 @@
-<div class="bulb" >
-    <i class="material-icons " style="font-size: 90px;" >archive</i>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bulb" *ngIf=showicon>
+  <P class="textsize">Your archived notes appear here
+  </P> 
+  <i class="material-icons " style="font-size: 90px;" >archive</i>
    
     </div>
-    <P class="textsize">Your archived notes appear here
-      </P>
+    
+
+
+<div   >
+  <div  fxLayout="row wrap"  >
+      
+    <app-notes *ngFor="let note of allnotes" [noteDetail]=note class="notepading"></app-notes>
+
+</div>
+</div> 

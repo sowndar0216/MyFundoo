@@ -31,6 +31,36 @@ console.log(this.noteUrl+'addNote');
 console.log(newNote.title, newNote.description);
 return this.http.post<CreateNoteModel>(this.noteUrl+'addNote',newNote,httpOptions);
 }
+public createArchiveNote(newNote:CreateNoteModel):any
+{
+  var httpOptions = {
+
+    headers: new HttpHeaders({'Content-Type': 'application/json' ,
+    'token':localStorage.getItem('jwtToken')}
+    )};
+    
+ console.log(localStorage.getItem('jwtToken'));
+console.log(this.noteUrl+'addNote');
+//console.log(httpOptions.headers);
+console.log(newNote.title, newNote.description);
+return this.http.post<CreateNoteModel>(this.noteUrl+'archiveNote',newNote,httpOptions);
+}
+
+
+
+public updateNote(newNote:CreateNoteModel):any
+{
+  var httpOptions2 ={
+    headers: new HttpHeaders({
+      'token':localStorage.getItem('jwtToken')
+    })
+  };
+console.log(this.noteUrl+'addNote');
+//console.log(httpOptions.headers);
+console.log(newNote.title, newNote.description);
+return this.http.post<CreateNoteModel>(this.noteUrl+'updateNote',newNote,httpOptions2);
+}
+
 
 
 public deleteNote(newNote:CreateNoteModel):any
@@ -54,6 +84,16 @@ public getnotes():Observable<CreateNoteModel[]> | any
     })
   };
   return this.http.get<CreateNoteModel[]>(this.noteUrl+'getNote',httpOptions2);
+
+}
+public getArchivenotes():Observable<CreateNoteModel[]> | any
+{
+  var httpOptions2 ={
+    headers: new HttpHeaders({
+      'token':localStorage.getItem('jwtToken')
+    })
+  };
+  return this.http.get<CreateNoteModel[]>(this.noteUrl+'getArchiveNote',httpOptions2);
 
 }
 
