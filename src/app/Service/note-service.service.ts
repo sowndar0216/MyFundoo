@@ -71,7 +71,7 @@ public deleteNote(newNote:CreateNoteModel):any
     })
   };
 console.log(newNote.id);
-return this.http.post<CreateNoteModel>(this.noteUrl+'delete',newNote,httpOptions2);
+return this.http.post<CreateNoteModel>(this.noteUrl+'deleteNote',newNote,httpOptions2);
 
 
 }

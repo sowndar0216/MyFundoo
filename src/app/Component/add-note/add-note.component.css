@@ -1,28 +1,4 @@
-/* .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    width: 500px;
-    height: 300px;
-  }
-  .noteInputBar {
-
-    width:600px;
-    
-    margin:0 auto;
-    margin-top: 40px;
-  }
- 
-
-.addNoteInputDiv {
-
-  width:600px;
-  
-  margin:0 auto;
-  margin-top: 25px;
-}
-*/
+/* 
 .addNoteInput {
   border: none;
   outline: none;
@@ -82,18 +58,7 @@ label, input {
 
   min-width: 170px;
   min-height:100px;
-}.bulb{
-  margin-top: 12%;
-  margin-bottom: auto;
-  margin-left:auto;
-  margin-right: auto;
-  width: 13%;
-  color:rgb(207, 207, 212);
- 
-
-    
-}
- .textsize{
+}.textsize{
   margin-top: 1%;
   margin-bottom: auto;
   margin-left:38%;
@@ -108,4 +73,86 @@ label, input {
   padding: 10px;
   border-radius: 8px;
   box-shadow: 2px 3px 3px 3px #d8d8d8;
+} */
+.addNote {
+
+  margin: 9px auto 0 auto;
+  border-color: white;
+  box-shadow: 0px 1px 5px;
+  vertical-align: middle;
+  border-radius: 8px;
+  width: 600px;
+  padding: 10px;
+  opacity: .7;
 }
+
+.mat-icon-button {
+  opacity: 0.9;
+}
+
+.addNoteInputDiv {
+  opacity: 0.7;
+  margin: auto;
+}
+
+.closeNoteButton {
+  margin-left: 52%;
+}
+
+.addNoteInput {
+  border: none;
+  outline: none;
+  resize: none;
+  width: 575px;
+  font-size: 14px;
+
+}
+
+.addNoteTitleInput{
+
+  border: none;
+  outline: none;
+  resize: none;
+  width: 90%;
+  font-size: 14px;
+
+
+}
+.setReminderInput{
+
+  outline: none;
+  border: none;
+  resize: none;
+
+}
+.pinIcon {
+
+  height: 10px;
+  margin-left: auto;
+
+}
+.reminderMenu,
+.dateMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 5px;
+    padding: 10px; 
+    width: 120%;
+    font-size: 14px !important;
+    margin: 0;
+    background-color: aliceblue; }
+    .bulb{
+      margin-top: 12%;
+      margin-bottom: auto;
+      margin-left:auto;
+      margin-right: auto;
+      width: 13%;
+      color:rgb(207, 207, 212);
+     
+    
+        
+    }
+     

@@ -10,44 +10,75 @@ import { CreateNoteModel } from 'src/app/Model/add-notes.model';
 })
 export class ArchiveComponent implements OnInit {
   showicon:boolean=true;
+  archive:boolean=false;
   private  allnotes:CreateNoteModel[];
   constructor(private noteservice:NoteServiceService) { }
 
+
   ngOnInit() {
 
-    
-this.viewArchivedNotes();
+    this.noteservice.getnotes().subscribe(
+
+response =>{
 
 
-  }
-
-public viewArchivedNotes(){
-  console.log('hello only avchived note here');
-  this.noteservice.getArchivenotes().subscribe(
-
-     response=> {
-       //  localStorage.setItem('jwtToken',data.headers.get('jwtTokenxxx'));
-   //    console.log(response);
-      this.allnotes=response;
-     //   console.log(this.allnotes);
-       // console.log('l',this.allnotes.length)
-        if(this.allnotes.length != 0)
-        {
-          this.showicon=false;
-          console.log('dd',this.allnotes)
-           
-        }
-      }
- )
+this.allnotes=response;
 
 
 }
 
- unarchive(){
-   console.log('archived and call ngonini');
-   
-  this.ngOnInit();
-  
- }
 
+
+    )
+
+
+
+  }
+
+// public viewArchivedNotes(){
+//   console.log('hello only avchived note here');
+//   this.noteservice.getArchivenotes().subscribe(
+
+//      response=> {
+      
+//       this.allnotes=response;
+ 
+//         if(this.allnotes.length != 0)
+//         {
+//           this.showicon=false;
+        
+
+
+
+
+
+//           console.log('dd',this.allnotes)
+           
+//         }
+//       }
+//  )
+
+
+// }
+
+
+
+ 
+
+
+ archived(note:CreateNoteModel)
+{
+  console.log(note);
+  
+    if( note.archive== 1)
+    {
+
+        console.log('d');
+        return true;
+    }
+    else{
+        console.log('d2');
+        return false;
+    }
+}
 }

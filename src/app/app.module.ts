@@ -23,7 +23,9 @@ import { SetPasswordComponent } from './Component/set-password/set-password.comp
 import { NotesComponent } from './Component/notes/notes.component';
 import { RegisterComponent } from './Component/register/register.component';
 import { UserServiceService } from './Service/user-service.service';
-
+import { CurrentNotesComponent } from './Component/current-notes/current-notes.component';
+import { TrashBarComponent } from './Component/trash-bar/trash-bar.component';
+import { EditDailogBarComponent } from './Component/edit-dailog-bar/edit-dailog-bar.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,10 @@ import { UserServiceService } from './Service/user-service.service';
     OtpComponent,
     SetPasswordComponent,
     NotesComponent,
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    CurrentNotesComponent,
+    TrashBarComponent,
+    EditDailogBarComponent
 
   ],
   imports: [
@@ -60,6 +65,6 @@ import { UserServiceService } from './Service/user-service.service';
   ],
   providers: [UserServiceService],
   bootstrap: [AppComponent],
-  entryComponents:[DialogOverviewExampleDialog]
+  entryComponents:[DialogOverviewExampleDialog,EditDailogBarComponent]
 })
 export class AppModule { }

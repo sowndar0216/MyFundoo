@@ -6,6 +6,7 @@ import { isArray, isNull, isNullOrUndefined } from 'util';
 
 import { NoteServiceService } from 'src/app/Service/note-service.service';
 import { CreateNoteModel } from 'src/app/Model/add-notes.model';
+import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.service';
 
 @Component({
   selector: 'app-add-note',
@@ -13,15 +14,30 @@ import { CreateNoteModel } from 'src/app/Model/add-notes.model';
   styleUrls: ['./add-note.component.css']
   })
   export class AddNoteComponent implements OnInit {
-    private colors:string[][]=[["white",'rgb(228, 70, 104)','rgb(238, 148, 96)','rgb(243, 215, 92)'],['rgb(173, 196, 92)','rgb(103, 226, 216)','rgb(144, 243, 250)','rgb(54, 166, 240)'],[ 'rgb(163, 160, 247)',
-    'rgb(222, 160, 247)','rgb(240, 183, 145)','rgb(225, 231, 231)']];
+    colorCode: Array<Object> = [
+      { name: "white", colorCode: "rgb(255, 255, 255)" },
+      { name: "lightGreen", colorCode: "rgb(204, 255, 144)" },
+      { name: "purple", colorCode: "rgb(215, 174, 251)" },
+      { name: "red", colorCode: "rgb(242, 139, 130)" },
+      { name: "Teal", colorCode: "rgb(167, 255, 235)" },
+      { name: "pink", colorCode: "rgb(253, 207, 232)" },
+      { name: "orange", colorCode: "rgb(251, 188, 4)" },
+      { name: "blue", colorCode: "rgb(203, 240, 248)" },
+      { name: "brown", colorCode: "rgb(230, 201, 168)" },
+      { name: "yellow", colorCode: "rgb(255, 244, 117)" },
+      { name: "darkBlue", colorCode: "rgb(174, 203, 250)" },
+      { name: "gray", colorCode: "rgb(232, 234, 237)" }
+    ]
+  
   barshow:boolean=false;
+  isOpen:boolean=false;
   showicon:boolean=true;
   getnote:boolean=false;
   createnote:CreateNoteModel=new CreateNoteModel;
   newnote:CreateNoteModel=new CreateNoteModel();
   getnewnote:boolean=false;
-  constructor(private noteservice:NoteServiceService,private snackBar: MatSnackBar) { }
+  color:string;
+  constructor(private noteservice:NoteServiceService,private snackBar: MatSnackBar,private cardupdate:CardsupdateServiceService) { }
   
   getnotes:boolean=false;
   private  allnotes:CreateNoteModel[];
@@ -29,32 +45,13 @@ import { CreateNoteModel } from 'src/app/Model/add-notes.model';
   {
   this.barshow=!this.barshow;
   }
-  public ngOnInit() {
-
-    console.log('hello');
-    this.noteservice.getnotes().subscribe(
-
-       response=> {
-         //  localStorage.setItem('jwtToken',data.headers.get('jwtTokenxxx'));
-     //    console.log(response);
-        this.allnotes=response;
-       //   console.log(this.allnotes);
-         // console.log('l',this.allnotes.length)
-          if(this.allnotes.length != 0)
-          {
-            this.showicon=false;
-            console.log('dd',this.allnotes)
-             this.getnote=true;
-             console.log(this.getnote)
-          }
-        }
-   )
-
-
+  public ngOnInit(){
+   
   }
   
   
   archive(){
+    this.isOpen=false;
     console.log("archived");
     
 //this.createnote.archive=1;
@@ -62,7 +59,7 @@ import { CreateNoteModel } from 'src/app/Model/add-notes.model';
 //this.createnote.color="red";
 
 this.barshow=!this.barshow;
-
+this.createnote.color=this.color;
 
     
   
@@ -71,15 +68,18 @@ if(this.createnote.title !=null){
 this.noteservice.createArchiveNote(this.createnote).subscribe(
 response =>{
 
+
 if(response.statusCode==166)
 {
-this.ngOnInit();
+
+
 this.snackBar.open(response.statusMessage,"added",{
 duration:2000,
 })
 }
-
+this.cardupdate.changemessage();
 },
+
 error =>{
 console.log("Error",error);
 } 
@@ -87,9 +87,9 @@ console.log("Error",error);
 this.newnote=this.createnote;
 
 this.createnote=new CreateNoteModel();
+this.createnote.color="white";
 }
-// console.log(this.createnote.title);
-// console.log(this.createnote.description);
+
 
 
   }
@@ -99,26 +99,39 @@ this.createnote=new CreateNoteModel();
 
 
 
+  changeColor(color) {
 
+    this.color = color;
 
+  }
 
 
 
 
   noteSave()
   {
-    this.showicon=false;
-  
-    this.getnote =true;
-    this.barshow=!this.barshow;
+   
 
+    this.getnote =true;
+    
+this.isOpen=false;
 
     console.log(this.createnote.archive);
   
+
+
+
+
   //console.log(this.createnote,'ssds')
   if(this.createnote.title !=null){
+    
+
+    this.createnote.color=this.color;
+
+
+
   this.noteservice.createNote(this.createnote).subscribe(
-  response =>{
+  response =>{ this.showicon=false;
  
   if(response.statusCode==166)
   {
@@ -127,7 +140,7 @@ this.ngOnInit();
   duration:2000,
   })
   }
-  
+  this.cardupdate.changemessage();
   },
   error =>{
   console.log("Error",error);

@@ -1,0 +1,99 @@
+<div class="mainEditArea" >
+
+    <div>
+  
+      <textarea  class="inputDiv" matTextareaAutosize cols="40" rows="1"
+        [(ngModel)]="data.title">{{data.title}}</textarea>
+  
+      
+    </div>
+  
+    <div>
+  
+      <!-- <img matCardImage src="Card wide image source"> -->
+  
+      <textarea class="inputDiv" cols="50" rows="2" [(ngModel)]="data.body">{{data.body}}</textarea>
+  
+    </div>
+  <div>
+      <button mat-button class="deleteReminderIcon" (click)="deleteReminder()">
+      <mat-icon class="deleteReminderIcon">cancel</mat-icon>
+   </button>
+  </div>
+    <mat-dialog-actions>
+  
+      <div>
+  
+        <button mat-icon-button matTooltip="Remind me" (click)="toggleReminderMenu()" >
+          <mat-icon class="mat-18">notifications</mat-icon>
+        </button>
+<!--        
+        <div class="reminderMenu" >
+  
+            <span>Reminder:</span> 
+     
+            <div>
+                <input [(ngModel)]="inputDate" class="setReminderInput" matInput [matDatepicker]="picker" placeholder="Choose a date" 
+                autocomplete="off" value="{{inputDate}}">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </div>
+           
+          
+            <div>
+          
+                <input matInput [(ngModel)]="inputTime" value="{{inputTime}}" class="setReminderInput" 
+                atp-time-picker autocomplete="off" placeholder="Set time">
+            
+            </div>
+          
+            <button mat-button (click)="setReminder()">Set Reminder</button>
+          
+          </div> -->
+  
+        <button mat-icon-button matTooltip="Collaborator">
+          <mat-icon class="mat-18">person_add_outline</mat-icon>
+        </button>
+  
+        <button mat-icon-button matTooltip="Change color">
+          <mat-icon class="mat-18">color_lens</mat-icon>
+        </button>
+  
+        <button mat-icon-button matTooltip="Add image">
+          <mat-icon class="mat-18">photo</mat-icon>
+        </button>
+  
+        <button mat-icon-button matTooltip="Archive" (click)="archive(data)">
+  
+          <ng-container >
+            <mat-icon class="mat-18">unarchive</mat-icon>
+          </ng-container>
+  
+          <ng-template >
+            <mat-icon class="mat-18">archive</mat-icon>
+          </ng-template>
+  
+        </button>
+  
+        <button mat-icon-button matTooltip="More" [matMenuTriggerFor]="moreMenu" [matMenuTriggerData]="{data:data}">
+          <mat-icon class="mat-18">more_vert</mat-icon>
+        </button>
+  
+      </div>
+  
+      <button class="saveEditedNote" mat-button (click)="saveEditedNote(data)">Save</button>
+    </mat-dialog-actions>
+  
+  </div>
+  
+  <mat-menu #moreMenu="matMenu">
+  
+    <ng-template matMenuContent let-data="data">
+  
+      <button mat-menu-item (click)="addTrash(data)"> Delete Note </button>
+  
+      <button mat-menu-item> Add Label </button>
+  
+    </ng-template>
+  
+  

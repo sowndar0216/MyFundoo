@@ -1,14 +1,17 @@
 
+<div *ngIf=archived()  class="notes" fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+
+
 <div class="center" >
-<mat-card class ="cardresize" ><!-- -->
-  <mat-card-title >  
+<mat-card class ="cardresize" [ngStyle]="{'backgroundColor':noteDetail.color}" ><!-- -->
+  <mat-card-title  (click)="openEditDialog(item)" >  
   {{noteDetail.title}}
   </mat-card-title>
   
-  <mat-card-subtitle >
-  <p>
+  <mat-card-subtitle (click)="openEditDialog(item)" >
+  
   {{noteDetail.description}}
-  </p> 
+   
   </mat-card-subtitle>
   
   
@@ -62,7 +65,7 @@ Reminder:
             <button *ngIf=archiveView mat-icon-button matTooltip="Archive" (click)="archive()" >
                 <mat-icon class="archive" style="font-size: 15px;">archive </mat-icon>
               </button>
-              <button *ngIf=unarchiveView mat-icon-button matTooltip="UnArchive" (click)="unarchive()" >
+              <button *ngIf=unarchiveView mat-icon-button matTooltip="UnArchive" (click)="archive()" >
                 <mat-icon class="archive" style="font-size: 15px;">unarchive </mat-icon>
               </button>
                 <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="More">
@@ -78,12 +81,5 @@ Reminder:
                   <button mat-menu-item>Copy to Google docs</button>
 
                 </mat-menu>
-             
-
-
-
-
-              
-  
-  
   </mat-card> </div>
+</div>

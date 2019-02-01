@@ -1,0 +1,19 @@
+
+
+            <app-add-note >
+
+            </app-add-note>
+
+  
+       
+           
+<div class="notes" fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+
+                <div *ngFor="let note of allnotes" >
+                    
+                    <app-notes  [noteDetail]=note >
+
+                    </app-notes>
+                </div>
+
+           </div>

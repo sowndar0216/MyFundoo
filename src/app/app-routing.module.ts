@@ -13,6 +13,7 @@ import { OtpComponent } from './Component/otp/otp.component';
 import { SetPasswordComponent } from './Component/set-password/set-password.component';
 import { NotesComponent } from './Component/notes/notes.component';
 import { RegisterComponent } from './Component/register/register.component';
+import { CurrentNotesComponent } from './Component/current-notes/current-notes.component';
 const appRoutes: Routes =[
  {
   path:'register',
@@ -36,7 +37,7 @@ const appRoutes: Routes =[
   children:[
 {
   path:'addNote',
-  component:AddNoteComponent
+  component:CurrentNotesComponent
 },
 {
   path:'remainder',
