@@ -35,6 +35,11 @@ const appRoutes: Routes =[
   path:'dashboard',
   component:DashboardComponent,
   children:[
+    {
+      path:'',
+      component:CurrentNotesComponent
+    },
+    
 {
   path:'addNote',
   component:CurrentNotesComponent

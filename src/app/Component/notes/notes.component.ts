@@ -9,6 +9,7 @@ import { CreateNoteModel } from 'src/app/Model/add-notes.model';
 import { NoteServiceService } from 'src/app/Service/note-service.service';
 import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.service';
 import { EditDailogBarComponent } from '../edit-dailog-bar/edit-dailog-bar.component';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Component({
@@ -22,48 +23,82 @@ export class NotesComponent implements OnInit {
 createnote:CreateNoteModel=new CreateNoteModel;
 archiveView:boolean=false;
 unarchiveView:boolean=false;
-
-constructor(private noteservice:NoteServiceService,private cardupdate:CardsupdateServiceService,private snackBar: MatSnackBar,private dialog: MatDialog) {
+colorCode: Array<Object> = [
+    { name: "white", colorCode: "rgb(255, 255, 255)" },
+    { name: "lightGreen", colorCode: "rgb(204, 255, 144)" },
+    { name: "purple", colorCode: "rgb(215, 174, 251)" },
+    { name: "red", colorCode: "rgb(242, 139, 130)" },
+    { name: "Teal", colorCode: "rgb(167, 255, 235)" },
+    { name: "pink", colorCode: "rgb(253, 207, 232)" },
+    { name: "orange", colorCode: "rgb(251, 188, 4)" },
+    { name: "blue", colorCode: "rgb(203, 240, 248)" },
+    { name: "brown", colorCode: "rgb(230, 201, 168)" },
+    { name: "yellow", colorCode: "rgb(255, 244, 117)" },
+    { name: "darkBlue", colorCode: "rgb(174, 203, 250)" },
+    { name: "gray", colorCode: "rgb(232, 234, 237)" }
+  ]
+  color:string;
+constructor(private noteservice:NoteServiceService,private cardupdate:CardsupdateServiceService,private snackBar: MatSnackBar,private dialog: MatDialog,private notecrud:NoteServiceService) {
 var arr_names:string[] = new Array();
 }
 @Input() noteDetail:CreateNoteModel;
 private  allnotes:CreateNoteModel[];
 @Output() messageEvent = new EventEmitter<String>();
 
-private colors:string[][]=[["white",'rgb(228, 70, 104)','rgb(238, 148, 96)','rgb(243, 215, 92)'],['rgb(173, 196, 92)','rgb(103, 226, 216)','rgb(144, 243, 250)','rgb(54, 166, 240)'],[ 'rgb(163, 160, 247)',
-'rgb(222, 160, 247)','rgb(240, 183, 145)','rgb(225, 231, 231)']];
+
 ngOnInit() {
  
 
-if(this.noteDetail.archive==0){
-this.archiveView=true;
+// if(this.noteDetail.archive==0){
+// this.archiveView=true;
 
-}else{
-    this.unarchiveView=true;
-}
+// }else{
+//     this.unarchiveView=true;
+// }
 
  //console.log(this.noteDetail.archive,'hello');
 
   //console.log('hello');
   
-  this.noteservice.getnotes().subscribe(
+//   this.noteservice.getnotes().subscribe(
 
-     response=> {
-       //  localStorage.setItem('jwtToken',data.headers.get('jwtTokenxxx'));
-   //    console.log(response);
-      this.allnotes=response;
-     //   console.log(this.allnotes);
-       // console.log('l',this.allnotes.length)
-        if(this.allnotes.length != 0)
-        {
+//      response=> {
+//             this.allnotes=response;
+//              if(this.allnotes.length != 0)
+//         {
         
-        }
-      }
- )
+//         }
+//       }
+//  )
 
+//this.cardupdate.changemessage();
 
 
 }
+changeColor(color) {
+
+    this.noteDetail.color = color;
+    this.noteservice.updateColorNote(this.noteDetail).subscribe(
+        response => {
+        if(response.statusCode==166)
+        {
+        this.snackBar.open(response.statusMessage,"changed to 1",{
+        duration:2000,
+        })
+        this.cardupdate.changemessage();
+        }
+        },
+        error =>{
+        console.log("Error",error);
+        } 
+        );
+
+
+
+
+  }
+
+
 
 openEditDialog(noteDetail) {
     const dialogRef = this.dialog.open(EditDailogBarComponent, {
@@ -83,7 +118,7 @@ openEditDialog(noteDetail) {
 noteDelete()
 {
 console.log(this.noteDetail);
-this.noteservice.deleteNote(this.noteDetail).subscribe(
+this.noteservice.updaterestoreNote(this.noteDetail).subscribe(
 response => {
 if(response.statusCode==166)
 {
@@ -128,48 +163,6 @@ this.cardupdate.changemessage();
 
 
 }
-unarchive(){
-
- //   this.createnote.archive=0;
-    console.log('unarchive buttom');
-    
-
-    console.log(this.noteDetail.archive,'archive','noteid',this.noteDetail.noteId);
-    
-
-
-
-
-
-
-
-    
-    this.noteservice.updateNote(this.noteDetail).subscribe(
-
-        response =>{
-    
-            if(response.statusCode==166)
-            {
-         
-         // this.archiveNote.ngOnInit();
-
-           this.snackBar.open(response.statusMessage,"added",{
-            duration:2000,
-            })
-            }
-            this.cardupdate.changemessage();
-            },
-            error =>{
-            console.log("Error",error);
-            } 
-            );
-   
-         
-          //  this.archiveNote.unarchive();
-   
-}
-
-
 
 // dostuff()
 // {

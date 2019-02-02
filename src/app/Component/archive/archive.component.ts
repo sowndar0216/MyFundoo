@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteServiceService } from 'src/app/Service/note-service.service';
 import { CreateNoteModel } from 'src/app/Model/add-notes.model';
+import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.service';
 
 
 @Component({
@@ -12,28 +13,24 @@ export class ArchiveComponent implements OnInit {
   showicon:boolean=true;
   archive:boolean=false;
   private  allnotes:CreateNoteModel[];
-  constructor(private noteservice:NoteServiceService) { }
+  constructor(private cardupdate:CardsupdateServiceService,private noteservice:NoteServiceService) { }
 
 
   ngOnInit() {
 
-    this.noteservice.getnotes().subscribe(
-
-response =>{
-
-
-this.allnotes=response;
-
-
+   
+    this.cardupdate.currentnotes.subscribe(udnotes=>
+      this.allnotes=udnotes);
+   
 }
 
 
 
-    )
+  
 
 
 
-  }
+  
 
 // public viewArchivedNotes(){
 //   console.log('hello only avchived note here');
@@ -66,19 +63,4 @@ this.allnotes=response;
  
 
 
- archived(note:CreateNoteModel)
-{
-  console.log(note);
-  
-    if( note.archive== 1)
-    {
-
-        console.log('d');
-        return true;
-    }
-    else{
-        console.log('d2');
-        return false;
-    }
-}
 }

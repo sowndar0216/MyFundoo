@@ -57,14 +57,17 @@
       </mat-icon>
     </button>
 
-    <button class="accountButton" [matMenuTriggerFor]="accountMenu">S</button>
+    <button mat-icon-button class="accountButton" [matMenuTriggerFor]="accountMenu">
+<mat-icon class="account_circle">account_circle</mat-icon>
+
+    </button>
   </div>
 
 </mat-toolbar>
 
 
 <mat-menu #accountMenu="matMenu">
-  <span>sowndar</span>
+  <span>{{name}}</span>
   <button mat-menu-item (click)="logout()">
     <mat-icon class="mat-18">power_settings_new</mat-icon> Logout
   </button>
@@ -99,87 +102,6 @@
       </button>
     </div>
   </mat-drawer>
-  <!-- <mat-accordion >
-            
-
-
-                <mat-expansion-panel class="addNoteInputDiv" (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-               <textarea class="addNoteInput" placeholder=" {{panelOpenState ? 'title' : 'Take a note..'}}" ></textarea> 
-
-                    
-                  </mat-panel-title>
-                  
-                </mat-expansion-panel-header>
-                
-                      <textarea class="addNoteInput" placeholder="Take a note..."></textarea>
-                  
-                    
-                    
-
-              
-                <mat-action-row>
-                  
-                  <div style="width:85cm">
-                  <button mat-icon-button    matTooltip="Remind me">
-                    
-                        <mat-icon class="add_alert">add_alert</mat-icon>
-                      </button>
-                    
-                    
-                      <button mat-icon-button   matTooltip="collaborator">
-                          <mat-icon class="person_add">person_add</mat-icon>
-                        </button>
-                    
-                      
-                        <button mat-icon-button matTooltip="Change color" >
-                          
-                            <button mat-icon-button  [matMenuTriggerFor]="palette">
-                                <mat-icon class="palette">palette
-                               </mat-icon></button>
-               <mat-menu #palette="matMenu">
-                 <button mat-menu-item>  <button mat-mini-fab></button></button>
-                 <button mat-menu-item> <button mat-mini-fab color="primary"></button>
-                </button>
-                  <button mat-menu-item><button mat-mini-fab color=#64b5f6></button></button>
-                 <button mat-menu-item><button mat-mini-fab color="black"></button></button>
-                 <button mat-menu-item> <button mat-mini-fab color="green"></button></button>
-               
-
-                </mat-menu>
-                          </button>
-                       
-                        
-                        <button mat-icon-button matTooltip="Add image" >
-                              <mat-icon class="photo">photo</mat-icon>
-                            </button> 
-                        
-                            <button mat-icon-button matTooltip="Archive" >
-                                <mat-icon class="archive">archive</mat-icon>
-                              </button>
-                         
-                                <button mat-button [matMenuTriggerFor]="menu" matTooltip="More">
-                                    <mat-icon class="more_vert">more_vert</mat-icon>
-
-                                </button>
-                            
-                                <mat-menu #menu="matMenu">
-                                  <button mat-menu-item>add Label</button>
-                                  <button mat-menu-item>Show tick boxes</button>
-                                </mat-menu>
-                              </div>
-
-
-
-
-                                   <button mat-button color="warn" (click)="close()">close</button>
-                                  
-                </mat-action-row>
-                 
-              </mat-expansion-panel>
-            </mat-accordion>    -->
 
   <mat-drawer-content>
 

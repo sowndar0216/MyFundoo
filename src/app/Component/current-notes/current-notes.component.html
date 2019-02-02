@@ -10,10 +10,12 @@
 <div class="notes" fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
 
                 <div *ngFor="let note of allnotes" >
-                    
+                    <div *ngIf="!note.archive && !note.trash">
                     <app-notes  [noteDetail]=note >
 
                     </app-notes>
                 </div>
+            
+            </div>
 
            </div>

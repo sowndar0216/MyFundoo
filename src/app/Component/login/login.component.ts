@@ -7,6 +7,7 @@ import { MatSnackBar } from '@angular/material';
 import { FormGroup,FormBuilder, Validators} from '@angular/forms';
 import { LoginModel } from 'src/app/Model/login.model';
 import { UserServiceService } from 'src/app/Service/user-service.service';
+import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,7 @@ import { UserServiceService } from 'src/app/Service/user-service.service';
 })
 export class LoginComponent implements OnInit  {
 
-  constructor(private formBuilder:FormBuilder,private myservice:UserServiceService,private snackBar: MatSnackBar,private router:Router) { }
+  constructor(private formBuilder:FormBuilder,private card:CardsupdateServiceService,private myservice:UserServiceService,private snackBar: MatSnackBar,private router:Router) { }
 
   user:LoginModel=new LoginModel();
   registerForm :FormGroup;
@@ -47,6 +48,7 @@ export class LoginComponent implements OnInit  {
            //  console.log(response.headers.get('jwtToken'));
              localStorage.setItem('jwtToken',response.headers.get('jwtTokenxxx'));
               //localStorage.setItem("token",JSON.stringify('jwtToken'));
+              this.card.changemessage();
             this.router.navigate(['/dashboard']);
           }
   

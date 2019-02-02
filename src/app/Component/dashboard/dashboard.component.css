@@ -78,13 +78,14 @@
 }
 
 .accountButton {
-  width: 30px;
-  height: 30px;
-  border: 1px solid;
-  border-radius: 30px;
+height: 0px;
+width: 0px;
+
+  border-radius: 0px;
   font-size: x-large;
   
-
+border:1px solid;
+margin-right: 15px;
 }
 
 

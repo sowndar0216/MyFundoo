@@ -25,8 +25,8 @@ export class CurrentNotesComponent implements OnInit {
         
 
         
-      this.cardupdate.archivenotes.subscribe(udnotes=>
-        this.archivenote=udnotes);
+      // this.cardupdate.archivenotes.subscribe(udnotes=>
+      //   this.archivenote=udnotes);
   }
 
  

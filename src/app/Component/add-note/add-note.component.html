@@ -239,11 +239,18 @@
 
     <textarea [ngStyle]="{'backgroundColor': color}" class="addNoteTitleInput" placeholder="Title"[(ngModel)]="createnote.title"></textarea>
 
+    <!-- <button class="pinIcon" mat-icon-button matTooltip="Pin/Unpin Note" (click)="pin(item)">
+      <ng-container *ngIf="pinValue; else elsePinTemplate">
+        <svg-icon [src]="pinnedIconSrc"> </svg-icon>
+      </ng-container>
+      <ng-template #elsePinTemplate>
+        <svg-icon [src]="unpinnedIconSrc"> </svg-icon>
+      </ng-template>
+    </button> -->
 
     <textarea [ngStyle]="{'backgroundColor': color}" class="addNoteInput" placeholder="Take a note..."   [(ngModel)]="createnote.description"></textarea>
 
   </div>
-
   <div class="addNoteControlIcon">
 
     <button mat-icon-button matTooltip="Remind me" (click)="toggleReminderMenu()" (click)="toggleShowReminder()">

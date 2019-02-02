@@ -29,7 +29,7 @@ import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.s
       { name: "gray", colorCode: "rgb(232, 234, 237)" }
     ]
   
-  barshow:boolean=false;
+
   isOpen:boolean=false;
   showicon:boolean=true;
   getnote:boolean=false;
@@ -41,10 +41,7 @@ import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.s
   
   getnotes:boolean=false;
   private  allnotes:CreateNoteModel[];
-  fullCardShow()
-  {
-  this.barshow=!this.barshow;
-  }
+ 
   public ngOnInit(){
    
   }
@@ -58,7 +55,7 @@ import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.s
 
 //this.createnote.color="red";
 
-this.barshow=!this.barshow;
+
 this.createnote.color=this.color;
 
     
@@ -149,6 +146,7 @@ this.ngOnInit();
 this.newnote=this.createnote;
 
 this.createnote=new CreateNoteModel();
+this.createnote.color="white";
 }
   // console.log(this.createnote.title);
   // console.log(this.createnote.description);

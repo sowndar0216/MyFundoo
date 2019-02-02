@@ -6,6 +6,20 @@
        
         </div>
         <P class="textsize">No notes in Recycle Bin </P>
-        <app-trash-bar>
+       
+       
+       <div>      
+                <div *ngFor="let note of allnotes" >
+                                <div *ngIf=" note.trash ">
+        <app-trash-bar [noteDetail]=note>
         
                 </app-trash-bar>
+            
+            
+        </div>  </div>
+            
+        </div>
+
+            
+            
+             

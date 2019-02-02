@@ -25,9 +25,19 @@ export class DashboardComponent {
 
   
   label: string;
-
+name:string;
   
   constructor(public dialog: MatDialog,private router: Router) { }
+
+
+  ngOnInit() {
+
+
+
+    
+  }
+
+
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       height: '400px',
