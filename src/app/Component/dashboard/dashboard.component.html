@@ -67,7 +67,7 @@
 
 
 <mat-menu #accountMenu="matMenu">
-  <span>{{name}}</span>
+  <span>{{nameFirstLetter}}</span>
   <button mat-menu-item (click)="logout()">
     <mat-icon class="mat-18">power_settings_new</mat-icon> Logout
   </button>
@@ -86,12 +86,19 @@
         <mat-icon>notifications_none</mat-icon> Reminders
       </button>
     </div>
-    <div>
+<mat-divider></mat-divider>
+    
+<p class=namestyle>LABEL</p>
+<div>
+
+
       <button mat-button (click)="openDialog()" class="sideNavListItems">
         <mat-icon>edit</mat-icon> Edit Labels
       </button>
     </div>
+    <mat-divider></mat-divider>
     <div>
+      
       <button mat-button [routerLink]="['archive']" (click)="headerName='archive'" [ngClass]="{'sideNavListItems': headerName!='Archive', 'sideNavlistItemsColored': headerName=='Archive'}">
         <mat-icon>archive</mat-icon> Archive
       </button>

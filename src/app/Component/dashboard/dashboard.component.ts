@@ -4,6 +4,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import {Router} from '@angular/router';
 import { Location } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
+import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.service';
 
 
 
@@ -22,7 +23,7 @@ export class DashboardComponent {
   public headerName = "Fundoo Notes";
   panelOpenState = false;
   viewChange=false;
-
+  nameFirstLetter: String;
   
   label: string;
 name:string;
@@ -31,10 +32,11 @@ name:string;
 
 
   ngOnInit() {
+   
+    let userCredentials = JSON.parse(localStorage.getItem("loginItem"));
+    this.nameFirstLetter = userCredentials.data.name.toUpperCase();
 
 
-
-    
   }
 
 

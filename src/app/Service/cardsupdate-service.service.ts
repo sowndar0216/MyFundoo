@@ -22,17 +22,7 @@ archivenotes=this.archivenote.asObservable();
         console.log(error);
       }
     );
-    this.notecrud.getArchivenotes().subscribe(
-      response =>{
-        this.archivenote.next(response);
-      console.log(response);
-      
-      }
-
-
-
-    );
-  
+    
    }
 
    ngOnInit():void {

@@ -88,8 +88,11 @@ border:1px solid;
 margin-right: 15px;
 }
 
-
-
+.namestyle
+{
+  opacity: 0.7;
+  font-size: 11px;
+}
 .sidenavBar {
   position: absolute;
   min-width: 250  px;

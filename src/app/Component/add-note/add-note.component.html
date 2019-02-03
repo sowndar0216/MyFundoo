@@ -239,8 +239,8 @@
 
     <textarea [ngStyle]="{'backgroundColor': color}" class="addNoteTitleInput" placeholder="Title"[(ngModel)]="createnote.title"></textarea>
 
-    <!-- <button class="pinIcon" mat-icon-button matTooltip="Pin/Unpin Note" (click)="pin(item)">
-      <ng-container *ngIf="pinValue; else elsePinTemplate">
+     <!-- <button class="pinIcon" mat-icon-button matTooltip="Pin/Unpin Note" (click)="pinOption(item)">
+      <ng-container *ngIf="pinOption; else elsePinTemplate">
         <svg-icon [src]="pinnedIconSrc"> </svg-icon>
       </ng-container>
       <ng-template #elsePinTemplate>
@@ -249,7 +249,6 @@
     </button> -->
 
     <textarea [ngStyle]="{'backgroundColor': color}" class="addNoteInput" placeholder="Take a note..."   [(ngModel)]="createnote.description"></textarea>
-
   </div>
   <div class="addNoteControlIcon">
 
@@ -261,7 +260,7 @@
     <div class="reminderMenu" *ngIf="reminderMenuBool">
 
         <span>Reminder:</span>
- 
+
         <div>
             <input class="setReminderInput" matInput [matDatepicker]="picker" placeholder="Choose a date" autocomplete="off">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

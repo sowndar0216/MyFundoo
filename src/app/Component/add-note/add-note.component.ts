@@ -28,7 +28,8 @@ import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.s
       { name: "darkBlue", colorCode: "rgb(174, 203, 250)" },
       { name: "gray", colorCode: "rgb(232, 234, 237)" }
     ]
-  
+    pinnedIconSrc = "../../assets/pin.svg";
+    unpinnedIconSrc = "../../assets/Icons/unpin.svg";
 
   isOpen:boolean=false;
   showicon:boolean=true;
@@ -37,6 +38,7 @@ import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.s
   newnote:CreateNoteModel=new CreateNoteModel();
   getnewnote:boolean=false;
   color:string;
+  pin:boolean=false;
   constructor(private noteservice:NoteServiceService,private snackBar: MatSnackBar,private cardupdate:CardsupdateServiceService) { }
   
   getnotes:boolean=false;
@@ -102,13 +104,21 @@ this.createnote.color="white";
 
   }
 
-
+  pinOption() {
+    if (this.pin) {
+      this.pin = false;
+    } else {
+      this.pin = true;
+    }
+  }
 
 
   noteSave()
   {
    
 
+
+    
     this.getnote =true;
     
 this.isOpen=false;
@@ -124,7 +134,7 @@ this.isOpen=false;
     
 
     this.createnote.color=this.color;
-
+this.createnote.pinned=this.pin;
 
 
   this.noteservice.createNote(this.createnote).subscribe(

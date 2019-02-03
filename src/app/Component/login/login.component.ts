@@ -41,12 +41,14 @@ export class LoginComponent implements OnInit  {
           {
             // this.snackBar.open(response.body.statusMessage,"",{
             //   duration:2000,})
-            console.log(response);
+         //   console.log(response);
              // console.log(response.headers);
               
            //   console.log(response.body.statusMessage);
            //  console.log(response.headers.get('jwtToken'));
-             localStorage.setItem('jwtToken',response.headers.get('jwtTokenxxx'));
+             
+           localStorage.setItem('userData',JSON.stringify(response.body));
+           localStorage.setItem('jwtToken',response.headers.get('jwtTokenxxx'));
               //localStorage.setItem("token",JSON.stringify('jwtToken'));
               this.card.changemessage();
             this.router.navigate(['/dashboard']);
