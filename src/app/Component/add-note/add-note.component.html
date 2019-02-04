@@ -237,7 +237,14 @@
 
   <div class="addNoteInputDiv">
 
-    <textarea [ngStyle]="{'backgroundColor': color}" class="addNoteTitleInput" placeholder="Title"[(ngModel)]="createnote.title"></textarea>
+    <textarea [ngStyle]="{'backgroundColor': color}" class="addNoteTitleInput" 
+    matInput
+    cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="5"
+    
+    placeholder="Title"[(ngModel)]="createnote.title"></textarea>
 
      <!-- <button class="pinIcon" mat-icon-button matTooltip="Pin/Unpin Note" (click)="pinOption(item)">
       <ng-container *ngIf="pinOption; else elsePinTemplate">
@@ -248,7 +255,14 @@
       </ng-template>
     </button> -->
 
-    <textarea [ngStyle]="{'backgroundColor': color}" class="addNoteInput" placeholder="Take a note..."   [(ngModel)]="createnote.description"></textarea>
+    <textarea [ngStyle]="{'backgroundColor': color}" class="addNoteInput" placeholder="Take a note..."  
+    matInput
+    cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="50"
+    
+    [(ngModel)]="createnote.description"></textarea>
   </div>
   <div class="addNoteControlIcon">
 
@@ -295,8 +309,8 @@
       <mat-icon class="mat-18">archive</mat-icon>
     </button>
 
-    <button mat-icon-button matTooltip="More" [matMenuTriggerFor]="moreMenu" [matMenuTriggerData]="{item:note}">
-      <mat-icon class="mat-18">more_vert</mat-icon>
+    <button mat-icon-button matTooltip="More" [matMenuTriggerFor]="moreMenu" >
+      <mat-icon class="mat-18"  (click)="changelabel()">more_vert</mat-icon>
     </button>
 
     <button mat-button color="warn" (click)="noteSave()">close</button>
@@ -325,11 +339,19 @@
 
 <mat-menu #moreMenu="matMenu">
 
-    <ng-template matMenuContent let-item="item">
-  
-            <button mat-menu-item>add Label</button>
+    <ng-template matMenuContent >
+  <div *ngIf="!showaddlabel">
+            <button mat-menu-item (click)="changelabel()" >add Label</button>
+          </div>
+
+          <div *ngIf="showaddlabel">
+            <button mat-menu-item (click)="changelabel()" >create label</button>
+
+
+          </div >
+          <div *ngIf="!showaddlabel">
             <button mat-menu-item>Show tick boxes</button>
-    
+          </div>
        
 
   

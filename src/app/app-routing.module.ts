@@ -15,6 +15,10 @@ import { NotesComponent } from './Component/notes/notes.component';
 import { RegisterComponent } from './Component/register/register.component';
 import { CurrentNotesComponent } from './Component/current-notes/current-notes.component';
 const appRoutes: Routes =[
+  {
+    path:'',
+    component:HomeComponent
+  },
  {
   path:'register',
   component:RegisterComponent

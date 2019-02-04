@@ -30,7 +30,7 @@ import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.s
     ]
     pinnedIconSrc = "../../assets/pin.svg";
     unpinnedIconSrc = "../../assets/Icons/unpin.svg";
-
+    showaddlabel:boolean=false;
   isOpen:boolean=false;
   showicon:boolean=true;
   getnote:boolean=false;
@@ -47,7 +47,11 @@ import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.s
   public ngOnInit(){
    
   }
-  
+  changelabel(){
+    console.log("add ");
+    
+this.showaddlabel=!this.showaddlabel;
+  }
   
   archive(){
     this.isOpen=false;

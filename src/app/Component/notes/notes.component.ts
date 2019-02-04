@@ -49,12 +49,12 @@ private  allnotes:CreateNoteModel[];
 ngOnInit() {
  
 
-// if(this.noteDetail.archive==0){
-// this.archiveView=true;
+ if(this.noteDetail.archive==0){
+ this.archiveView=true;
 
-// }else{
-//     this.unarchiveView=true;
-// }
+ }else{
+     this.unarchiveView=true;
+ }
 
  //console.log(this.noteDetail.archive,'hello');
 
@@ -102,17 +102,30 @@ changeColor(color) {
 
 openEditDialog(noteDetail) {
     const dialogRef = this.dialog.open(EditDailogBarComponent, {
-      data: noteDetail
+      data: noteDetail,
+      panelClass: 'my-class'
     });
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed');
-    //   this.http.post(noteDetail, "note/updateNote").subscribe(
+    dialogRef.afterClosed().subscribe(result => {
+    console.log(noteDetail);
 
-    //   )
-    //   this.messageEvent.emit("emit from child");
+      
 
-    // });
+this.noteservice.updateEditNote(this.noteDetail).subscribe(
+  response => {
+  if(response.statusCode==166)
+  {
+  this.snackBar.open(response.statusMessage,"changed to 1",{
+  duration:2000,
+  })
+  this.cardupdate.changemessage();
+  }
+  },
+  error =>{
+  console.log("Error",error);
+  } 
+  );
+    });
 
   }
 noteDelete()

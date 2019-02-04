@@ -86,6 +86,23 @@ console.log(newNote.title, newNote.description);
 return this.http.post<CreateNoteModel>(this.noteUrl+'updateColorNote',newNote,httpOptions2);
 }
 
+
+
+
+public updateEditNote(newNote:CreateNoteModel):any
+{
+  var httpOptions2 ={
+    headers: new HttpHeaders({
+      'token':localStorage.getItem('jwtToken')
+    })
+  };
+console.log(this.noteUrl+'addNote');
+//console.log(httpOptions.headers);
+console.log(newNote.title, newNote.description);
+return this.http.post<CreateNoteModel>(this.noteUrl+'updateEditNote',newNote,httpOptions2);
+}
+
+
 public deleteNote(newNote:CreateNoteModel):any
 {
   var httpOptions2 ={

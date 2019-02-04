@@ -37,3 +37,12 @@
   margin-right: auto;
   width: 28%; 
 }
+
+.addNoteInput {
+  border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  font-size: 14px;
+
+}

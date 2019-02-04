@@ -65,6 +65,6 @@ import { EditDailogBarComponent } from './Component/edit-dailog-bar/edit-dailog-
   ],
   providers: [UserServiceService],
   bootstrap: [AppComponent],
-  entryComponents:[DialogOverviewExampleDialog,EditDailogBarComponent]
+  entryComponents:[DialogOverviewExampleDialog  ,EditDailogBarComponent]
 })
 export class AppModule { }
