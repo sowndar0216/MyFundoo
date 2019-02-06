@@ -310,7 +310,7 @@
     </button>
 
     <button mat-icon-button matTooltip="More" [matMenuTriggerFor]="moreMenu" >
-      <mat-icon class="mat-18"  (click)="changelabel()">more_vert</mat-icon>
+      <mat-icon class="mat-18" >more_vert</mat-icon>
     </button>
 
     <button mat-button color="warn" (click)="noteSave()">close</button>
@@ -336,28 +336,21 @@
   </ng-template>
 
 </mat-menu>
-
+ 
 <mat-menu #moreMenu="matMenu">
-
-    <ng-template matMenuContent >
-  <div *ngIf="!showaddlabel">
-            <button mat-menu-item (click)="changelabel()" >add Label</button>
-          </div>
-
-          <div *ngIf="showaddlabel">
-            <button mat-menu-item (click)="changelabel()" >create label</button>
-
-
-          </div >
-          <div *ngIf="!showaddlabel">
-            <button mat-menu-item>Show tick boxes</button>
-          </div>
-       
+   
+        <button mat-menu-item [matMenuTriggerFor]="addlabel">add label</button>
+        <button mat-menu-item >Show trick</button>
+      </mat-menu>
+      
+      <mat-menu #addlabel="matMenu">
+        
+        <button mat-menu-item>add label</button>
+        
+      </mat-menu>
+     
 
   
-    </ng-template>
-  
-  </mat-menu>
 
 
 

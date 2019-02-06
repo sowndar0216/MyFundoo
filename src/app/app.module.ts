@@ -10,7 +10,7 @@ import { LoginComponent } from './Component/login/login.component';
 import{MaterialModule} from '../material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomeComponent } from './Component/home/home.component';
-import { DashboardComponent, DialogOverviewExampleDialog } from './Component/dashboard/dashboard.component';
+import { DashboardComponent} from './Component/dashboard/dashboard.component';
 import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AddNoteComponent } from './Component/add-note/add-note.component';
@@ -26,6 +26,7 @@ import { UserServiceService } from './Service/user-service.service';
 import { CurrentNotesComponent } from './Component/current-notes/current-notes.component';
 import { TrashBarComponent } from './Component/trash-bar/trash-bar.component';
 import { EditDailogBarComponent } from './Component/edit-dailog-bar/edit-dailog-bar.component';
+import { LabelDailogBoxComponent } from './label-dailog-box/label-dailog-box.component';
 
 @NgModule({
   declarations: [
@@ -42,10 +43,11 @@ import { EditDailogBarComponent } from './Component/edit-dailog-bar/edit-dailog-
     OtpComponent,
     SetPasswordComponent,
     NotesComponent,
-    DialogOverviewExampleDialog,
+    
     CurrentNotesComponent,
     TrashBarComponent,
-    EditDailogBarComponent
+    EditDailogBarComponent,
+    LabelDailogBoxComponent
 
   ],
   imports: [
@@ -65,6 +67,6 @@ import { EditDailogBarComponent } from './Component/edit-dailog-bar/edit-dailog-
   ],
   providers: [UserServiceService],
   bootstrap: [AppComponent],
-  entryComponents:[DialogOverviewExampleDialog  ,EditDailogBarComponent]
+  entryComponents:[LabelDailogBoxComponent  ,EditDailogBarComponent]
 })
 export class AppModule { }

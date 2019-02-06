@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import { Location } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
 import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.service';
+import { LabelDailogBoxComponent } from 'src/app/label-dailog-box/label-dailog-box.component';
 
 
 
@@ -41,10 +42,10 @@ name:string;
 
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      height: '400px',
-      width: '600px',
-      data: {label: this.label}
+    const dialogRef = this.dialog.open(LabelDailogBoxComponent, {
+      height: '220px',
+      width: '400px',
+           data: {label: this.label}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -73,21 +74,7 @@ name:string;
   // }
   
   
-  @Component({
-    selector: 'dialog-overview-example-dialog',
-    templateUrl: 'dialog-overview-example-dialog.html',
-  })
-  export class DialogOverviewExampleDialog {
   
-    constructor(
-      public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-      @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-  
-    onNoClick(): void {
-      
-      this.dialogRef.close();
-    }
-  
-  }
+
 
 

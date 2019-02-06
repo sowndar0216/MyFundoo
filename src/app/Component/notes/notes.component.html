@@ -10,7 +10,7 @@
   <mat-card-subtitle (click)="openEditDialog(noteDetail)" >
   
   <textarea [ngStyle]="{'backgroundColor': noteDetail.color}" class="addNoteInput"  value={{noteDetail.description}}
-  matInput
+
   cdkTextareaAutosize
            #autosize="cdkTextareaAutosize"
                       cdkAutosizeMinRows="1"

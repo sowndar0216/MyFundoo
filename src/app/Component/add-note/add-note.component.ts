@@ -35,10 +35,12 @@ import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.s
   showicon:boolean=true;
   getnote:boolean=false;
   createnote:CreateNoteModel=new CreateNoteModel;
+  
   newnote:CreateNoteModel=new CreateNoteModel();
   getnewnote:boolean=false;
   color:string;
   pin:boolean=false;
+  
   constructor(private noteservice:NoteServiceService,private snackBar: MatSnackBar,private cardupdate:CardsupdateServiceService) { }
   
   getnotes:boolean=false;
@@ -74,7 +76,7 @@ response =>{
 
 if(response.statusCode==166)
 {
-
+  this.createnote.color="white";
 
 this.snackBar.open(response.statusMessage,"added",{
 duration:2000,
@@ -90,7 +92,7 @@ console.log("Error",error);
 this.newnote=this.createnote;
 
 this.createnote=new CreateNoteModel();
-this.createnote.color="white";
+
 }
 
 
@@ -159,8 +161,8 @@ this.ngOnInit();
   );
 this.newnote=this.createnote;
 
-this.createnote=new CreateNoteModel();
-this.createnote.color="white";
+this.createnote=new CreateNoteModel();this.color="white";
+
 }
   // console.log(this.createnote.title);
   // console.log(this.createnote.description);

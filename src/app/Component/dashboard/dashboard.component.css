@@ -46,7 +46,10 @@
   flex-direction: row;
   
 }
-
+.dailog-style{
+  width:50%;
+  padding: 0%;
+}
 .iconAndTitle {
   display: flex;
 
