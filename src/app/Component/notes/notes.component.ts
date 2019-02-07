@@ -49,7 +49,7 @@ private  allnotes:CreateNoteModel[];
 ngOnInit() {
  
 
- if(this.noteDetail.archive==0){
+ if(this.noteDetail.archive==false){
  this.archiveView=true;
 
  }else{
@@ -78,7 +78,7 @@ ngOnInit() {
 changeColor(color) {
 
     this.noteDetail.color = color;
-    this.noteservice.updateColorNote(this.noteDetail).subscribe(
+    this.noteservice.updateEditNote(this.noteDetail).subscribe(
         response => {
         if(response.statusCode==166)
         {
@@ -147,12 +147,12 @@ console.log("Error",error);
 );
 
 }
+
+
+
 archive(){
-    //this.createnote.archive=1;
-    
-   // console.log(this.noteDetail.archive,'archive   ','noteid',this.noteDetail.noteId);
-    
-    this.noteservice.updateNote(this.noteDetail).subscribe(
+  
+    this.noteservice.updateArchiveNote(this.noteDetail).subscribe(
 
         response =>{
            
@@ -177,65 +177,32 @@ this.cardupdate.changemessage();
 
 }
 
-// dostuff()
-// {
-// const dialogRef = this.dialog.open(EditdialogComponent, {
-// width: '600px',
-// data: {createnote:this.createnote}
-// });
 
-// dialogRef.afterClosed().subscribe(result => {
-// console.log('The dialog was closed');
-// this.createnote = result;
-// console.log(this.createnote);
-// this.noteservice.updateNote(this.createnote).subscribe(
-// response => {
-// if(response.statusCode==166)
-// {
-// this.snackBar.open(response.statusMessage,"",{
-// duration:2000,
-// })
-// }
-// },
-// error => {
-// console.log("Error",error);
-// } 
-// )
-// });
-// }
+pinChange(){
+  
+  this.noteservice.updatePinNote(this.noteDetail).subscribe(
 
-// // 
-// colorchange(singlecolor:string){
-//     this.notedetails.color=singlecolor;
-//     this.notecrudservice.updateNote(this.notedetails).subscribe(
-//       response => {
-//         if(response.statusCode==166)
-//         {
-//           this.snackBar.open(response.statusMessage,"",{
-//             duration:2000,
-//           })
-//         }
-//         this.cardupdate.changemessage();
-//       },
-//       error => {
-//          console.log("Error",error);
-//       } 
-//       );
-      
+      response =>{
+         
+          if(response.statusCode==166)
+          {
+        
+       // this.archiveNote.ngOnInit();
+this.cardupdate.changemessage();
+         this.snackBar.open(response.statusMessage,"added",{
+          duration:2000,
+          })
+          }
+         
+          },
+          error =>{
+          console.log("Error",error);
+          } 
+          );
+ 
+          
 
-//   }
 
-archived()
-{
-    if(this.noteDetail.archive == 0)
-    {
-        console.log('d');
-        return true;
-    }
-    else{
-        console.log('d2');
-        return false;
-    }
 }
 
 }

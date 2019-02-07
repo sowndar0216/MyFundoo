@@ -35,11 +35,11 @@ import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.s
   showicon:boolean=true;
   getnote:boolean=false;
   createnote:CreateNoteModel=new CreateNoteModel;
-  
+  pin:boolean=false;
   newnote:CreateNoteModel=new CreateNoteModel();
   getnewnote:boolean=false;
   color:string;
-  pin:boolean=false;
+  
   
   constructor(private noteservice:NoteServiceService,private snackBar: MatSnackBar,private cardupdate:CardsupdateServiceService) { }
   
@@ -59,9 +59,6 @@ this.showaddlabel=!this.showaddlabel;
     this.isOpen=false;
     console.log("archived");
     
-//this.createnote.archive=1;
-
-//this.createnote.color="red";
 
 
 this.createnote.color=this.color;
@@ -70,7 +67,8 @@ this.createnote.color=this.color;
   
 //console.log(this.createnote,'ssds')
 if(this.createnote.title !=null){
-this.noteservice.createArchiveNote(this.createnote).subscribe(
+  this.createnote.archive=true;
+this.noteservice.createNote(this.createnote).subscribe(
 response =>{
 
 
@@ -98,6 +96,7 @@ this.createnote=new CreateNoteModel();
 
 
   }
+ 
 
 
 
@@ -110,21 +109,19 @@ this.createnote=new CreateNoteModel();
 
   }
 
-  pinOption() {
-    if (this.pin) {
-      this.pin = false;
-    } else {
-      this.pin = true;
-    }
+  pinChange(){
+
+    this.pin=true;
   }
+
+
+
 
 
   noteSave()
   {
+ 
    
-
-
-    
     this.getnote =true;
     
 this.isOpen=false;
@@ -140,8 +137,8 @@ this.isOpen=false;
     
 
     this.createnote.color=this.color;
-this.createnote.pinned=this.pin;
 
+    this.createnote.pinned=this.pin;
 
   this.noteservice.createNote(this.createnote).subscribe(
   response =>{ this.showicon=false;

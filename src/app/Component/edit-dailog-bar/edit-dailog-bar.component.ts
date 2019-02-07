@@ -49,7 +49,7 @@ export class EditDailogBarComponent implements OnInit {
     
    // console.log(this.noteDetail.archive,'archive   ','noteid',this.noteDetail.noteId);
     
-    this.noteservice.updateNote(this.noteDetail).subscribe(
+    this.noteservice.updateArchiveNote(this.noteDetail).subscribe(
 
         response =>{
            

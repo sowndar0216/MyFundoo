@@ -4,7 +4,7 @@ export class CreateNoteModel{
     id:number; //cannot be null
     pinned:boolean;
     color:string;
-    archive:number;
+    archive:boolean;
     trash:boolean;
     createStamp:Date;
     image:string;

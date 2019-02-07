@@ -1,21 +1,21 @@
+<app-add-note>
+
+</app-add-note>
 
 
-            <app-add-note >
 
-            </app-add-note>
-
-  
+<mat-grid-list cols="30 " rowHeight="100%" >
+<div *ngFor="let note of allnotes">
+    <div *ngIf="!note.archive && !note.trash">
        
-           
-<div class="notes" fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+            <mat-grid-tile    >
+                <app-notes [noteDetail]=note>
 
-                <div *ngFor="let note of allnotes" >
-                    <div *ngIf="!note.archive && !note.trash">
-                    <app-notes  [noteDetail]=note >
+                </app-notes>
+            </mat-grid-tile>
+        
 
-                    </app-notes>
-                </div>
-            
-            </div>
 
-           </div>
+    </div>
+</div>
+</mat-grid-list>

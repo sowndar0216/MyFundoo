@@ -25,7 +25,7 @@
 <div   >
   <div  fxLayout="row wrap"  >
     <div *ngFor="let note of allnotes" >
-      <div *ngIf="note.archive">
+      <div *ngIf="note.archive && !note.trash">
     <app-notes   [noteDetail]=note class="notepading" >
         
     </app-notes>

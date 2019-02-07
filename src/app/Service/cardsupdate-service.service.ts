@@ -43,17 +43,6 @@ archivenotes=this.archivenote.asObservable();
          
 
 }
-archiveChangeMessage(){
-  this.notecrud.getArchivenotes().subscribe(
-    response =>{
-      this.archivenote.next(response);
-    console.log(response);
-    
-    }
 
-
-
-  );     
-}
 
 }
