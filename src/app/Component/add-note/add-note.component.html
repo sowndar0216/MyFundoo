@@ -226,6 +226,18 @@
 
 </div>
 <P class="textsize" *ngIf=showicon >Notes that you add appear here </P>-->
+ <!-- <button class="pinIcon" mat-icon-button matTooltip="Pin/Unpin Note" (click)="pinOption(item)">
+      <ng-container *ngIf="pinOption; else elsePinTemplate">
+        <svg-icon [src]="pinnedIconSrc"> </svg-icon>
+      </ng-container>
+      <ng-template #elsePinTemplate>
+        <svg-icon [src]="unpinnedIconSrc"> </svg-icon>
+      </ng-template>
+    </button> -->
+    
+  <!-- <button>
+<i style="font-size:24px" class="fa fa-thumb-tack">&#xf08d;</i>
+</button> -->
 
 <div *ngIf="!isOpen" class="addNote" (click)="isOpen=true"  >
 
@@ -245,25 +257,11 @@
                             cdkAutosizeMaxRows="5"
     
     placeholder="Title"[(ngModel)]="createnote.title"></textarea>
-
-     <!-- <button class="pinIcon" mat-icon-button matTooltip="Pin/Unpin Note" (click)="pinOption(item)">
-      <ng-container *ngIf="pinOption; else elsePinTemplate">
-        <svg-icon [src]="pinnedIconSrc"> </svg-icon>
-      </ng-container>
-      <ng-template #elsePinTemplate>
-        <svg-icon [src]="unpinnedIconSrc"> </svg-icon>
-      </ng-template>
-    </button> -->
-    
-  <!-- <button>
-<i style="font-size:24px" class="fa fa-thumb-tack">&#xf08d;</i>
-</button> -->
+   <button  (click)="pinChange()"> <img class="fundooIcon" style="width:20px;height:20px;" src="/../assets/pin1.png">
+   </button>
 
 
-<button mat-icon-button >
-  <mat-icon class="fa fa-thumb-tack">fa fa-thumb-tack
-  </mat-icon>
-</button>
+
 
     <textarea [ngStyle]="{'backgroundColor': color}" class="addNoteInput" placeholder="Take a note..."  
     matInput
@@ -319,10 +317,10 @@
       <mat-icon class="mat-18">archive</mat-icon>
     </button>
 
-    <button mat-icon-button matTooltip="More" [matMenuTriggerFor]="moreMenu" >
+    <button mat-icon-button matTooltip="More"  (click)="showView()" >
       <mat-icon class="mat-18" >more_vert</mat-icon>
     </button>
-
+     
     <button mat-button color="warn" (click)="noteSave()">close</button>
 
   </div>
@@ -346,7 +344,8 @@
   </ng-template>
 
 </mat-menu>
- 
+<!--  
+
 <mat-menu #moreMenu="matMenu">
    
         <button mat-menu-item [matMenuTriggerFor]="addlabel">add label</button>
@@ -355,16 +354,51 @@
       
       <mat-menu #addlabel="matMenu">
         
-        <button mat-menu-item>add label</button>
+        <button mat-menu-item   >add label</button>
         
-      </mat-menu>
+    <textarea 
+    
+    placeholder="Title"></textarea>
+      </mat-menu> -->
      
 
   
+<div class="place" *ngIf="show" >
+<!-- 
+<mat-card>
 
 
+  <button (click)="showLabel()"   >add label</button>
+</mat-card> -->
+<button (click)="showLabel()" >abb label</button>
+<button (click)="showLabel()" >show trick box</button>
+</div>
 
+<div class="addlabel" *ngIf="showlabel" >
+  <h5>add label</h5>  
+  <mat-toolbar>
+      <mat-toolbar-row  style="background-color:white">
+  <input class="inputDiv" type="text"  (input)="insertName($event)" placeholder="create a note" 
+    >
   
+
+    <button mat-icon-button matTooltip="search">
+        <mat-icon class="mat-18">search</mat-icon>
+      </button>
+  </mat-toolbar-row>
+  
+    </mat-toolbar>
+    <mat-toolbar-row >
+      <button>create label</button>
+    <textarea  class="inputDiv" style="width:80%"  maxlength="10" value={{text}}
+
+  cdkTextareaAutosize
+           #autosize="cdkTextareaAutosize"
+                      cdkAutosizeMinRows="1"
+                          cdkAutosizeMaxRows="3"
+></textarea>
+</mat-toolbar-row>
+</div>
 
   
   <!-- <div class="bulb" *ngIf=showicon>

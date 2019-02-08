@@ -26,7 +26,7 @@ import { UserServiceService } from './Service/user-service.service';
 import { CurrentNotesComponent } from './Component/current-notes/current-notes.component';
 import { TrashBarComponent } from './Component/trash-bar/trash-bar.component';
 import { EditDailogBarComponent } from './Component/edit-dailog-bar/edit-dailog-bar.component';
-import { LabelDailogBoxComponent } from './label-dailog-box/label-dailog-box.component';
+import { LabelDailogBoxComponent } from './Component/label-dailog-box/label-dailog-box.component';
 
 @NgModule({
   declarations: [

@@ -49,8 +49,7 @@ public updatePinNote(newNote:CreateNoteModel):any
 console.log(this.noteUrl+'addNote');
 //console.log(httpOptions.headers);
 console.log(newNote.title, newNote.description);
-return this.http.put<CreateNoteModel>(this.noteUrl+'note/pin'+newNote.noteId
-,null,httpOptions2);
+return this.http.put<CreateNoteModel>(this.noteUrl+'note/pin/'+newNote.noteId,null,httpOptions2);
 }
 public updaterestoreNote(newNote:CreateNoteModel):any
 {

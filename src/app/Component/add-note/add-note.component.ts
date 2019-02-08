@@ -39,10 +39,10 @@ import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.s
   newnote:CreateNoteModel=new CreateNoteModel();
   getnewnote:boolean=false;
   color:string;
-  
-  
+  show:boolean=false;
+  showlabel:boolean=false;
   constructor(private noteservice:NoteServiceService,private snackBar: MatSnackBar,private cardupdate:CardsupdateServiceService) { }
-  
+  text:'entre a label ';
   getnotes:boolean=false;
   private  allnotes:CreateNoteModel[];
  
@@ -97,7 +97,10 @@ this.createnote=new CreateNoteModel();
 
   }
  
-
+  insertName(e){
+    this.text=e.target.value;
+    console.log(e.target.value);
+  }
 
 
 
@@ -111,17 +114,40 @@ this.createnote=new CreateNoteModel();
 
   pinChange(){
 
+
     this.pin=true;
+    console.log(this.pin);
+    
   }
 
+  showView(){
+console.log('place');
 
+this.show=!this.show;
 
+this.showlabel=false;
+  }
+  
 
+  showLabel(){
+    this.show=!this.show;
+    this.showlabel=true;
 
+  }
   noteSave()
   {
  
-   
+    this.show=!this.show;
+    
+    if(this.show ){
+    this.show=false;
+  
+  }
+  if(this.showLabel ){
+    this.showlabel=false;
+  
+  }
+
     this.getnote =true;
     
 this.isOpen=false;
@@ -139,6 +165,9 @@ this.isOpen=false;
     this.createnote.color=this.color;
 
     this.createnote.pinned=this.pin;
+    console.log(this.createnote);
+    
+console.log(this.createnote.pinned);
 
   this.noteservice.createNote(this.createnote).subscribe(
   response =>{ this.showicon=false;

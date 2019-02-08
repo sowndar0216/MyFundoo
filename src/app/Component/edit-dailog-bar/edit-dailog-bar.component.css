@@ -12,7 +12,13 @@
     margin-left: auto;
   
   }
-   .mat-dialog-container {
+   
+  
+  
+  
+  
+  
+  /deep/ .mat-dialog-container {
   
     padding: 0 !important;
     border-radius: 10px;

@@ -3,19 +3,38 @@
 </app-add-note>
 
 
+<p>pinned</p>
+    <div *ngFor="let note of allnotes">
 
-<mat-grid-list cols="30 " rowHeight="100%" >
-<div *ngFor="let note of allnotes">
-    <div *ngIf="!note.archive && !note.trash">
+     
+    
+    <div *ngIf="!note.archive && !note.trash && !note.pinned ">
        
-            <mat-grid-tile    >
+        
                 <app-notes [noteDetail]=note>
 
                 </app-notes>
-            </mat-grid-tile>
+          
         
-
 
     </div>
 </div>
-</mat-grid-list>
+
+
+
+<p>others</p>    
+        <div *ngFor="let note of allnotes">
+    
+                
+        <div *ngIf="!note.archive && !note.trash &&     note.pinned">
+           
+               
+                    <app-notes [noteDetail]=note>
+    
+                    </app-notes>
+              
+            
+    
+        </div>
+    </div>
+    
