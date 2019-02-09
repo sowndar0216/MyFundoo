@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 import { Location } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
 import { CardsupdateServiceService } from 'src/app/Service/cardsupdate-service.service';
-import { LabelDailogBoxComponent } from 'src/app/label-dailog-box/label-dailog-box.component';
+import { LabelDailogBoxComponent } from 'src/app/Component/label-dailog-box/label-dailog-box.component';
 
 
 
@@ -34,8 +34,9 @@ name:string;
 
   ngOnInit() {
    
-    let userCredentials = JSON.parse(localStorage.getItem("loginItem"));
+    let userCredentials = JSON.parse(localStorage.getItem("userData"));
     this.nameFirstLetter = userCredentials.data.name.toUpperCase();
+console.log( userCredentials.data.name.toUpperCase());
 
 
   }
@@ -57,6 +58,7 @@ name:string;
   logout():void{
  
     localStorage.removeItem('jwtToken');
+    localStorage.removeItem('userData')
     this.router.navigate(["login"])
   }}
   

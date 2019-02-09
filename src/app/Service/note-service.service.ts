@@ -12,7 +12,7 @@ export class NoteServiceService {
 
 constructor(private http:HttpClient) { }
 
-private noteUrl = 'http://localhost:8080/fundooNote/';
+private noteUrl = 'http://192.168.0.41:8080/fundooNote/';
 
 public createNote(newNote:CreateNoteModel):any
 {

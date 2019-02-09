@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
             {
                 this.snackBar.open('Successfully Register Please Confirm Your Email Address', 'LogIn', {
                   duration: 2000,});
-                this.router.navigate(['/otp']);
+                this.router.navigate(['/login']);
             }
             else{
             this.snackBar.open(data.statusMessage,"Register Fails",{

@@ -9,13 +9,13 @@ import { LoginModel } from '../Model/login.model';
 
 
   const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({'Access-Control-Allow-Origin':'*', 'Content-Type': 'application/json' })
  };
 @Injectable()
 
 export class UserServiceService {
 
-   private userUrl = 'http://localhost:8080/fundooNote/';
+   private userUrl = 'http://192.168.0.41:8080/fundooNote/';
    constructor(private http:HttpClient) { }
 
    public createUser(user: RegisterModel) :any {
